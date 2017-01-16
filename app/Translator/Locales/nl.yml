@@ -1,0 +1,59 @@
+menu:
+  welcome: Welkom
+  gall/galleries1: Galerieën I
+  gall/galleries2: Galerieën II
+  exhibitions: Exposities
+  about_the_work: Teksten over het werk
+  cv: Kort CV
+  contact: Contact
+  flag: english
+tabmenu:
+  gall/galleries1:
+    gallery1/g/1: Galerie 1
+    gallery2/g/2: Galerie 2
+    gallery3/g/3: Galerie 3
+    gallery4/g/4: Galerie 4
+    gallery5/g/5: Galerie 5
+    gallery6/g/6: Galerie 6
+    gallery7/g/7: Galerie 7
+    gallery8/g/8: Galerie 8
+  gall/galleries2:
+    collages/c/1: Collages
+    chamber_screens/k/1: Kamerschermen
+    floor_designs/v/1: Vloerontwerpen
+    exhibition1/e/1: Expositie 1
+    exhibition2/e/2: Expositie 2
+  exhibitions:
+    group: Groepsexposities
+    solo: Solo-exposities
+    duo: Duo-exposities
+    stock: Kunstwerken in stock
+    purchases: Kunstaankopen
+    assignment: Opdracht
+    charity: Benefiet
+  about_the_work:
+    about_the_work: Over het werk
+    geometry: Geometrie
+    publications: Publicaties
+    literature: Literatuur
+  cv:
+    cv: Kort CV
+  contact:
+    contact: Contact
+    studio_visit: Aanvraag atelierbezoek
+    links: Links
+    about_this_site: Over deze site
+page.work:
+  back_button_caption: Terug
+  select_background_color: kies achtergrond
+  background_color:
+    white: wit
+    soft_yellow: zacht geel
+    yellow: geel
+    soft_peach: zacht perzik
+    peach: perzik
+    soft_green: zacht groen
+    green: groen
+    soft_blue: zacht blauw
+    blue: blauw
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="56f2baee-32c2-4e28-ae7e-dea2e11db554" name="localhost - even kijken" url="http://s.com">
+        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/web" accessType="MOUNT" />
+      </webServer>
+      <webServer id="aa4a9636-a7a5-4847-a2a9-7cb10638c1d0" name="FTP server" url="http://ftp.marionleblanc.nl">
+        <fileTransfer host="ftp.marionleblanc.nl" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

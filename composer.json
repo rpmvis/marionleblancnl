@@ -1,0 +1,23 @@
+{
+    "require": {
+        "php": "^7.0",
+        "silex/silex": "^2.0",
+        "symfony/yaml": "^3.1",
+        "doctrine/dbal": "^2.5",
+        "sorien/silex-pimple-dumper": "^2.0",
+        "twig/twig": "^1.27",
+        "aea/blade-service-provider": "^2.0",
+        "symfony/asset": "^3.1",
+        "symfony/translation": "^3.1",
+        "symfony/config": "^3.1",
+        "symfony/validator": "^3.1",
+        "swiftmailer/swiftmailer": "^5.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "Studio\\"		: "src/",
+            "app\\"         : ""
+        }
+    }
+}
+

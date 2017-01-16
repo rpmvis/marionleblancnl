@@ -1,0 +1,59 @@
+menu:
+  welcome: Welcome
+  gall/galleries1: Galleries I
+  gall/galleries2: Galleries II
+  exhibitions: Exhibitions
+  about_the_work: Texts about the work
+  cv: CV
+  contact: Contact
+  flag: nederlands
+tabmenu:
+  gall/galleries1:
+    gallery1/g/1: Gallery 1
+    gallery2/g/2: Gallery 2
+    gallery3/g/3: Gallery 3
+    gallery4/g/4: Gallery 4
+    gallery5/g/5: Gallery 5
+    gallery6/g/6: Gallery 6
+    gallery7/g/7: Gallery 7
+    gallery8/g/8: Gallery 8
+  gall/galleries2:
+    collages/c/1: Collages
+    chamber_screens/k/1: Chamber screens
+    floor_designs/v/1: Floor designs
+    exhibition1/e/1: Exhibition 1
+    exhibition2/e/2: Exhibition 2
+  exhibitions:
+    group: Group exhibitions
+    solo: Solo exhibitions
+    duo: Duo exhibitions
+    stock: Art works in stock
+    purchases: Art purchases
+    assignment: Assignment
+    charity: Charity
+  about_the_work:
+    about_the_work: About Marion's work
+    geometry: Geometry
+    publications: Publications
+    literature: Literature
+  cv:
+    cv: CV
+  contact:
+    contact: Contact
+    studio_visit: no translation, only supplied in Dutch
+    links: Links
+    about_this_site: About this site
+
+page.work:
+  back_button_caption: Back
+  select_background_color: select background
+  background_color:
+    white: white
+    soft_yellow: soft yellow
+    yellow: yellow
+    soft_peach: soft peach
+    peach: peach
+    soft_green: soft green
+    green: green
+    soft_blue: soft blue
+    blue: blue

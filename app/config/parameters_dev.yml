@@ -1,0 +1,38 @@
+# dev parameters
+parameters:
+    log_level:  DEBUG
+    #--- TimeZone: UTC, Europe/Kiev...
+    timezone: UTC
+
+    locale: nl
+
+    # debug: true, false ---
+    debug: true
+
+    # environment: production, test, development ---
+    environment: development
+
+    # host url for local testing ---
+    url_test: 'http://localhost:8888'
+
+    # database parameters ---
+    db.driver:   'pdo_mysql'
+    db.host:     'localhost'
+    db.dbname:   'marionleblancnl'
+    db.user:     'root'
+    db.password: 'guppie'
+    db.charset:  'utf8'
+    db.port:     '3306'
+
+    # developer mail ---
+    developer_mail: 'dev@mail.com'
+
+    # email parameters ---
+    mail.host: 'smtp.vevida.com'
+    mail.port: 25
+    mail.username: 'art@marionleblanc.nl'
+    mail.noreply: 'noreply@marionleblanc.nl'
+    mail.password: 'Jonneke22!' # to do: encryption
+    mail.encryption: 'tls' # ('tls', 'ssl', or null)
+    mail.auth_mode: 'login' # ('plain', 'login', 'cram-md5', or null)
+    mail.disable_delivery:  true

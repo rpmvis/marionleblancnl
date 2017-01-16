@@ -1,0 +1,11 @@
+.idea/*
+cache/*
+logs/*
+temp/*
+vendor/*
+web/examples/*
+web/resources/CSS/Styles2.css
+php.user.ini
+pimple.json
+public/assets/*
+composer.lock

@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - marionleblancnl@127.0.0.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="marionleblancnl">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="admin02"/>
+    <schema id="3" name="admin03"/>
+    <schema id="4" name="datatables"/>
+    <schema id="5" name="datatables_edit"/>
+    <schema id="6" name="easyadmindemo"/>
+    <schema id="7" name="hb"/>
+    <schema id="8" name="information_schema"/>
+    <schema id="9" name="mysql"/>
+    <schema id="10" name="my_test"/>
+    <schema id="11" name="performance_schema"/>
+    <schema id="12" name="phpmyadmin"/>
+    <schema id="13" name="projectmanagement"/>
+    <schema id="14" name="rene_event"/>
+    <schema id="15" name="rsywx"/>
+    <schema id="16" name="rsywx2"/>
+    <schema id="17" name="sandbox"/>
+    <schema id="18" name="Silex-MVC-example"/>
+    <schema id="19" name="sonata_adm"/>
+    <schema id="20" name="symfony"/>
+    <schema id="21" name="symfony_demo"/>
+    <schema id="22" name="symfony_demo_orig"/>
+    <schema id="23" name="tutorial2"/>
+    <table id="24" parent="1" name="articles"/>
+    <table id="25" parent="1" name="categories"/>
+    <table id="26" parent="1" name="comments"/>
+    <table id="27" parent="1" name="extras"/>
+    <table id="28" parent="1" name="groups"/>
+    <table id="29" parent="1" name="modules"/>
+    <table id="30" parent="1" name="settings"/>
+    <table id="31" parent="1" name="tgalerie_oud"/>
+    <table id="32" parent="1" name="tlkpachtergrondkleur"/>
+    <table id="33" parent="1" name="tlkpgalerietype"/>
+    <table id="34" parent="1" name="tlkplookup"/>
+    <table id="35" parent="1" name="tlkptodo"/>
+    <table id="36" parent="1" name="tlkpwerktype"/>
+    <table id="37" parent="1" name="tparam_code"/>
+    <table id="38" parent="1" name="tsetting"/>
+    <table id="39" parent="1" name="ttitels">
+      <comment>titels in nderlands en engels</comment>
+    </table>
+    <table id="40" parent="1" name="ttranslate"/>
+    <table id="41" parent="1" name="twerk"/>
+    <table id="42" parent="1" name="twerk_bak"/>
+    <table id="43" parent="1" name="twerk_bak2"/>
+    <table id="44" parent="1" name="users"/>
+    <table id="45" parent="1" name="ttranslate2"/>
+    <table id="46" parent="1" name="temp"/>
+    <view id="47" parent="1" name="vwgalerienaam">
+      <comment>VIEW</comment>
+    </view>
+    <view id="48" parent="1" name="vwwerk">
+      <comment>VIEW</comment>
+    </view>
+    <view id="49" parent="1" name="vwwerken">
+      <comment>VIEW</comment>
+    </view>
+    <routine id="50" parent="1" name="code1">
+      <comment>work around for code value parameter for view &apos;vwwerk&apos;</comment>
+      <routine-kind>FUNCTION</routine-kind>
+    </routine>
+    <column id="51" parent="24" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="52" parent="24" name="title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="24" name="alias">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="54" parent="24" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="24" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="56" parent="24" name="keywords">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="57" parent="24" name="text">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="58" parent="24" name="language">
+      <data-type>char(3)|0</data-type>
+    </column>
+    <column id="59" parent="24" name="template">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="60" parent="24" name="date">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="61" parent="24" name="category">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="62" parent="24" name="headline">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="63" parent="24" name="infoline">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="64" parent="24" name="comments">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="65" parent="24" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="66" parent="24" name="rank">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="67" parent="24" name="access">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="68" parent="24" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="69" parent="25" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="70" parent="25" name="title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="71" parent="25" name="alias">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="72" parent="25" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="73" parent="25" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="74" parent="25" name="keywords">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="75" parent="25" name="language">
+      <data-type>char(3)|0</data-type>
+    </column>
+    <column id="76" parent="25" name="template">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="77" parent="25" name="parent">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="78" parent="25" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="79" parent="25" name="rank">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="80" parent="25" name="access">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="81" parent="25" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="82" parent="26" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="83" parent="26" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="84" parent="26" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="85" parent="26" name="url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="86" parent="26" name="text">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="87" parent="26" name="language">
+      <data-type>char(3)|0</data-type>
+    </column>
+    <column id="88" parent="26" name="date">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="89" parent="26" name="article">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="90" parent="26" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="91" parent="26" name="rank">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="92" parent="26" name="access">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="93" parent="26" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="94" parent="27" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="95" parent="27" name="title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="96" parent="27" name="alias">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="97" parent="27" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="98" parent="27" name="text">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="99" parent="27" name="language">
+      <data-type>char(3)|0</data-type>
+    </column>
+    <column id="100" parent="27" name="date">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="101" parent="27" name="category">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="102" parent="27" name="article">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="103" parent="27" name="headline">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="104" parent="27" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="105" parent="27" name="rank">
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="106" parent="27" name="access">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="107" parent="27" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="108" parent="28" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="109" parent="28" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="110" parent="28" name="alias">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="111" parent="28" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="112" parent="28" name="categories">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="113" parent="28" name="articles">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="114" parent="28" name="extras">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="115" parent="28" name="comments">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="116" parent="28" name="groups">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="117" parent="28" name="users">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="118" parent="28" name="modules">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="119" parent="28" name="settings">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="120" parent="28" name="filter">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="121" parent="28" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <key id="122" parent="28" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="123" parent="29" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="124" parent="29" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="125" parent="29" name="alias">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="126" parent="29" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="127" parent="29" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="128" parent="29" name="version">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="129" parent="29" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="130" parent="29" name="access">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="131" parent="29" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="132" parent="30" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="133" parent="30" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="134" parent="30" name="value">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="135" parent="30" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="136" parent="31" name="Id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="137" parent="31" name="Galerie">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="138" parent="31" name="Volgorde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="139" parent="32" name="Volgorde">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="140" parent="32" name="Kleur">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="141" parent="32" name="Rood">
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <column id="142" parent="32" name="Groen">
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <column id="143" parent="32" name="Blauw">
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <column id="144" parent="32" name="HTMLcode">
+      <data-type>varchar(7)|0</data-type>
+    </column>
+    <column id="145" parent="32" name="Opmerking">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="146" parent="32" name="Volgorde">
+      <columns>Volgorde</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="147" parent="32" name="PRIMARY">
+      <columns>Kleur</columns>
+      <primary>1</primary>
+    </key>
+    <key id="148" parent="32" name="Volgorde">
+      <columns>Volgorde</columns>
+      <underlying-index>Volgorde</underlying-index>
+    </key>
+    <column id="149" parent="33" name="GalerieType">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="150" parent="33" name="Omschrijving">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="151" parent="33" name="en_description">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="152" parent="33" name="Volgorde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="153" parent="33" name="Op_web_site">
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <column id="154" parent="33" name="Galerienaam_op_website">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="155" parent="33" name="PRIMARY">
+      <columns>GalerieType</columns>
+      <primary>1</primary>
+    </key>
+    <column id="156" parent="34" name="Group">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="157" parent="34" name="Lookup">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="158" parent="34" name="Volgorde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="159" parent="35" name="ToDo">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="160" parent="36" name="WerkType">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="161" parent="36" name="Omschrijving">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="162" parent="36" name="Volgorde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="163" parent="37" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="164" parent="37" name="param_code">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <index id="165" parent="37" name="param_code">
+      <columns>param_code</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="166" parent="37" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <key id="167" parent="37" name="param_code">
+      <columns>param_code</columns>
+      <underlying-index>param_code</underlying-index>
+    </key>
+    <column id="168" parent="38" name="Id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="169" parent="38" name="PicturePath">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="170" parent="38" name="Gebruikersnaam">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="171" parent="38" name="Wachtwoord">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="172" parent="38" name="SessieId">
+      <data-type>varchar(128)|0</data-type>
+    </column>
+    <column id="173" parent="38" name="laatste_map">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="174" parent="39" name="titel">
+      <data-type>varchar(38)|0</data-type>
+    </column>
+    <column id="175" parent="39" name="en_titel">
+      <data-type>varchar(37)|0</data-type>
+    </column>
+    <column id="176" parent="40" name="dutch_expr">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="177" parent="40" name="english_expr">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="178" parent="40" name="PRIMARY">
+      <columns>dutch_expr</columns>
+      <primary>1</primary>
+    </key>
+    <column id="179" parent="41" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="180" parent="41" name="Oude Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="181" parent="41" name="Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="182" parent="41" name="GalerieId_zzz">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="183" parent="41" name="VolgOrde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="184" parent="41" name="GalerieType">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="185" parent="41" name="GalerieVolgNr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="186" parent="41" name="Titel">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="187" parent="41" name="Hoogte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="188" parent="41" name="Breedte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="189" parent="41" name="Jaar">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="190" parent="41" name="Materiaal">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="191" parent="41" name="Ondergrond">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="192" parent="41" name="Techniek">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="193" parent="41" name="Prijs">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="194" parent="41" name="ImageHeight">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="195" parent="41" name="ImageWidth">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="196" parent="41" name="Beschikbaarheid">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="197" parent="41" name="Picture">
+      <data-type>mediumblob|0</data-type>
+    </column>
+    <column id="198" parent="41" name="en_Titel">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="199" parent="41" name="Code">
+      <columns>Code</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="200" parent="41" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <key id="201" parent="41" name="Code">
+      <columns>Code</columns>
+      <underlying-index>Code</underlying-index>
+    </key>
+    <column id="202" parent="42" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="203" parent="42" name="Oude Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="204" parent="42" name="Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="205" parent="42" name="GalerieId_zzz">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="206" parent="42" name="VolgOrde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="207" parent="42" name="GalerieType">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="208" parent="42" name="GalerieVolgNr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="209" parent="42" name="Titel">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="210" parent="42" name="Hoogte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="211" parent="42" name="Breedte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="212" parent="42" name="Jaar">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="213" parent="42" name="Materiaal">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="214" parent="42" name="Ondergrond">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="215" parent="42" name="Techniek">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="216" parent="42" name="Prijs">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="217" parent="42" name="ImageHeight">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="218" parent="42" name="ImageWidth">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="219" parent="42" name="Beschikbaarheid">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="220" parent="42" name="Picture">
+      <data-type>mediumblob|0</data-type>
+    </column>
+    <column id="221" parent="42" name="en_Titel">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="222" parent="42" name="Code">
+      <columns>Code</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="223" parent="42" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <key id="224" parent="42" name="Code">
+      <columns>Code</columns>
+      <underlying-index>Code</underlying-index>
+    </key>
+    <column id="225" parent="43" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="226" parent="43" name="Oude Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="227" parent="43" name="Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="228" parent="43" name="GalerieId_zzz">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="229" parent="43" name="VolgOrde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="230" parent="43" name="GalerieType">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="231" parent="43" name="GalerieVolgNr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="232" parent="43" name="Titel">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="233" parent="43" name="Hoogte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="234" parent="43" name="Breedte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="235" parent="43" name="Jaar">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="236" parent="43" name="Materiaal">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="237" parent="43" name="Ondergrond">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="238" parent="43" name="Techniek">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="239" parent="43" name="Prijs">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="240" parent="43" name="ImageHeight">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="241" parent="43" name="ImageWidth">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="242" parent="43" name="Beschikbaarheid">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="243" parent="43" name="Picture">
+      <data-type>mediumblob|0</data-type>
+    </column>
+    <column id="244" parent="43" name="en_Titel">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="245" parent="43" name="Code">
+      <columns>Code</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="246" parent="43" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <key id="247" parent="43" name="Code">
+      <columns>Code</columns>
+      <underlying-index>Code</underlying-index>
+    </key>
+    <column id="248" parent="44" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="249" parent="44" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="250" parent="44" name="user">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="251" parent="44" name="password">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="252" parent="44" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="253" parent="44" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="254" parent="44" name="language">
+      <data-type>char(3)|0</data-type>
+    </column>
+    <column id="255" parent="44" name="first">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="256" parent="44" name="last">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="257" parent="44" name="status">
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="258" parent="44" name="groups">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="259" parent="44" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="260" parent="45" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="261" parent="45" name="key1">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="262" parent="45" name="key2">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="263" parent="45" name="row_nr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="264" parent="45" name="column_nr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="265" parent="45" name="trans_nl">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="266" parent="45" name="trans_en">
+      <data-type>text|0</data-type>
+    </column>
+    <key id="267" parent="45" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="268" parent="46" name="key1">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="269" parent="46" name="key2">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="270" parent="46" name="row_nr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="271" parent="46" name="column_nr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="272" parent="46" name="trans_nl">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="273" parent="46" name="trans_en">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="274" parent="47" name="GalerieType">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="275" parent="47" name="GalerieNaam">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="276" parent="47" name="en_GalerieNaam">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="277" parent="47" name="Werk_count">
+      <mandatory>1</mandatory>
+      <data-type>bigint(21)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="278" parent="47" name="Galerie_volgorde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="279" parent="48" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="280" parent="48" name="Oude Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="281" parent="48" name="Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="282" parent="48" name="GalerieId_zzz">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="283" parent="48" name="VolgOrde">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="284" parent="48" name="GalerieType">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="285" parent="48" name="GalerieVolgNr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="286" parent="48" name="Titel">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="287" parent="48" name="en_Titel">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="288" parent="48" name="Hoogte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="289" parent="48" name="Breedte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="290" parent="48" name="Jaar">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="291" parent="48" name="Materiaal">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="292" parent="48" name="Ondergrond">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="293" parent="48" name="Techniek">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="294" parent="48" name="Prijs">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="295" parent="48" name="ImageHeight">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="296" parent="48" name="ImageWidth">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="297" parent="48" name="Beschikbaarheid">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="298" parent="48" name="Picture">
+      <data-type>mediumblob|0</data-type>
+    </column>
+    <column id="299" parent="48" name="en_Materiaal">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="300" parent="48" name="en_Ondergrond">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="301" parent="48" name="en_Techniek">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="302" parent="48" name="en_Beschikbaarheid">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="303" parent="49" name="Code">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="304" parent="49" name="Titel">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="305" parent="49" name="beschikbaarheid">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="306" parent="49" name="Hoogte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="307" parent="49" name="Breedte">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="308" parent="49" name="ImageHeight">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="309" parent="49" name="ImageWidth">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="310" parent="49" name="WerkType">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="311" parent="49" name="Jaar">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="312" parent="49" name="Materiaal">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="313" parent="49" name="Ondergrond">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="314" parent="49" name="Techniek">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="315" parent="49" name="Prijs">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="316" parent="49" name="GalerieType">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="317" parent="49" name="GalerieVolgNr">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <argument id="318" parent="50">
+      <direction>RETURN</direction>
+      <data-type>varchar(30)|0</data-type>
+    </argument>
+  </database-model>
+</dataSource>
