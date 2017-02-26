@@ -27,10 +27,9 @@ class ContactController extends BaseController implements ControllerProviderInte
     public function getResponse(Request $request):string{
         // set tabmenu_items
         // $active_tabmenu: 'about_the_work','geometry','publications', 'literature'
-        $menuHelper = new MenuHelper($this->app, $this->context);
         $main_menu = $this->context['active_menu']; // 'contact'
         $active_tabmenu = $request->get('tab_menu');
-        $tabmenu_items = $menuHelper->getTabMenuItems($main_menu, $active_tabmenu);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
         $this->context['tabmenu_items'] = $tabmenu_items;
 
         // get header
@@ -56,7 +55,7 @@ class ContactController extends BaseController implements ControllerProviderInte
                 // replace %BlueDot%
                 if ($active_tabmenu === 'links'){
                     $find = '%BlueDot%';
-                    $replace = $this->app->url('/').'resources/appImages/BlueDot.gif';
+                    $replace = $this->app->url('/').'web/resources/appImages/BlueDot.gif';
 
                     for ($i=0; $i < count($rows) ; $i++){
                         $row = $rows[$i];

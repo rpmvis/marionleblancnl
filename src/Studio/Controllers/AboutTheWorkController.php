@@ -24,10 +24,9 @@ class AboutTheWorkController extends BaseController implements ControllerProvide
         // a) set context
         // - context tabmenu_items
         //   $active_tabmenu: 'about_the_work','geometry','publications', 'literature'
-        $menuHelper = new MenuHelper($this->app, $this->context);
         $main_menu = $this->context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
-        $tabmenu_items = $menuHelper->getTabMenuItems($main_menu, $active_tabmenu);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
         $this->context['tabmenu_items'] = $tabmenu_items;
 
         // - context form_type

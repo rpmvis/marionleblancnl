@@ -52,51 +52,12 @@ header, footer {
     border-radius: 0pt; /* 7pt */
 }
 
-/* too narrow to support three columns */
-@media all and (max-width: 640px) {
-    #main, #page {
-        flex-direction: column;
-    }
-
-    #main > mainbox, #main > leftbox, #main > rightbox {
-        /* Return them to document order */
-        order: 0;
-    }
-
-    #main > leftbox, #main > rightbox {
-        display: none;
-        min-height: 0px;
-        max-height: 0px;
-    }
-
-    header {
-        min-height: 50px;
-        max-height: 50px;
-    }
-
-    footer{
-        /*min-height: 10px;*/
-        /*max-height: 15px;*/
-    }
-}
-
-@media only screen and (max-width: 420px) {
-    #main{
-        background-color: aqua;
-    }
-}
-
-@media only screen and (max-width: 330px) {
-    #main{
-        background-color: blueviolet;
-    }
-}
 
 /* navigation */
 ul.topnav, ul.headernav {
     list-style-type: none;
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
     overflow: hidden;
     width: 100%;
     text-align: left;
@@ -123,8 +84,8 @@ ul.topnav li a:visited {
 }
 
 /*ul.topnav li a:link {*/
-    /*text-decoration:	none;*/
-    /*color: #4CAF50;*/
+/*text-decoration:	none;*/
+/*color: #4CAF50;*/
 /*}*/
 
 ul.topnav li a:hover {
@@ -138,23 +99,6 @@ ul.topnav li a.active {
 }
 
 ul.topnav li.icon {display: none;}
-
-@media screen and (max-width:680px) {
-    /* hide all menu items, except active item */
-    ul.topnav li {display: none;}
-    ul.topnav li.active  {
-        float: left;
-        display: inline-block;
-    }
-    ul.topnav li.icon {
-        float: right;
-        display: inline-block;
-    }
-
-    /* hide all but first item */
-    ul.headernav li:not(:first-child) {display: none;}
-
-}
 
 /*anchors for hyperlinks*/
 a{font-size: 14px;}
@@ -180,23 +124,6 @@ a:active {
     color:	#cc00ff;
 }
 
-@media screen and (max-width:680px) {
-    ul.topnav.responsive {position: relative;}
-    ul.topnav.responsive li.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    ul.topnav.responsive li {
-        float: none;
-        display: inline;
-    }
-    ul.topnav.responsive li a {
-        display: block;
-        text-align: left;
-    }
-}
-
 img.img_BlueDot {
     height: 12px;
     width: 12px;
@@ -212,13 +139,6 @@ img.img_logo{
     border: 0;
     float: right;
 }
-
-img.img_background_transp{
-    height: 13px;
-    width: 140px;
-    border: 0;
-}
-
 
 /* WORK */
 .work_row {
@@ -253,10 +173,11 @@ img.img_background_transp{
     font-size: 14px;
     margin: 0px;
     padding: 5px;
+    font-size: 15px;
 }
 
 .work_content a {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 
@@ -336,7 +257,7 @@ img.img_background_transp{
     /*font-size: 1em;*/
 }
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
     .grid-row {
         flex-direction: column ;
     }
@@ -374,11 +295,143 @@ img.img_background_transp{
 
 .kop_Marion{
     color: #000060;
-    font-size: 21px;
+    font-size: 24px;
     text-align: left;
+    padding-right: 30px;
 }
 
 .kop3{
     font-size:	14px;
     color: #ff1aee; /*roze-paars*/
 }
+
+/* too narrow to support three columns */
+@media all and (max-width: 640px) {
+    #main, #page {
+        flex-direction: column;
+    }
+
+    #main > mainbox, #main > leftbox, #main > rightbox {
+        /* Return them to document order */
+        order: 0;
+    }
+
+    #main > leftbox, #main > rightbox {
+        display: none;
+        min-height: 0px;
+        max-height: 0px;
+    }
+
+    header {
+        min-height: 50px;
+        max-height: 50px;
+    }
+
+    footer{
+        /*min-height: 10px;*/
+        /*max-height: 15px;*/
+    }
+}
+
+
+
+
+@media all{
+    .work_content img{
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    img.img_background_transp{
+        height: 80px;
+        width: 80px;
+        border: 0;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    /* hide all but first item, so Logo Marion will be hidden */
+    ul.headernav li:not(:first-child) {
+        display: none;
+    }
+
+    /* MENU BEGIN
+    /* all menu items invisible */
+    ul.topnav li {
+        display: none;
+        padding-right: 30px;
+    }
+
+    /* except active menu item */
+    ul.topnav li.active {
+        float: left;
+        display: inline-block;
+        font-size:18px;
+    }
+
+    ul.topnav li.active a{
+        font-size:18px;
+    }
+
+    /* except ☰ icon toggle button*/
+    ul.topnav li.icon {
+        float: right;
+        display: inline-block;
+
+    }
+
+    ul.topnav li.icon a{
+        font-size:20px;
+    }
+    /* MENU END */
+
+    /* MENU BEGIN-responsive, after pressing icon button that invokes click_myTopnav() function that sets .responsive class */
+    ul.topnav.responsive {position: relative;}
+
+    /* show ☰ icon toggle button */
+    ul.topnav.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size:20px; /* @@@ nodig?*/
+    }
+
+    ul.topnav.responsive li.icon a{
+        font-size:20px;
+    }
+    /* show every li item */
+    ul.topnav.responsive li {
+        float: none;
+        display: inline;
+    }
+
+    /* show every li a item */
+    ul.topnav.responsive li a {
+        display: block; /* vertical position */
+        text-align: left;
+        font-size: 18px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    /* MENU END-responsive */
+
+    .work_content img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border: 0;
+    }
+
+    img.img_background_transp{
+        height: 110px;
+        width: 110px;
+        border: 0;
+    }
+
+    .kop_Marion{
+        font-size: 15px;
+    }
+}
+

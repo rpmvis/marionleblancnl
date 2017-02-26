@@ -14,10 +14,16 @@
         "swiftmailer/swiftmailer": "^5.4"
     },
     "autoload": {
+        "classmap": [
+            "tests/"
+        ],
         "psr-0": {
             "Studio\\"		: "src/",
             "app\\"         : ""
         }
+    },
+    "require-dev": {
+        "symfony/browser-kit": "^3.2",
+        "symfony/css-selector": "^3.2"
     }
 }
-

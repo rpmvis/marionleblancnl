@@ -1,4 +1,4 @@
-# prod parameters
+# production parameters
 parameters:
     log_level:  DEBUG
     #--- TimeZone: UTC, Europe/Kiev...
@@ -8,9 +8,6 @@ parameters:
 
     # debug: true, false ---
     debug: true
-
-    # environment: production, test, development ---
-    environment: production
 
     # host url for local testing ---
     url_test: 'http://www.marionleblanc.nl'

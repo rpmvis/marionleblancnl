@@ -115,8 +115,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
         }
 
         // get tabmenu items
-        $menuHelper = new MenuHelper($this->app, $this->context);
-        $tabmenu_items = $menuHelper->getTabMenuItems($main_menu_item, $active_tabmenu);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu_item, $active_tabmenu, $this->locale);
         $this->context['tabmenu_items'] = $tabmenu_items;
 
         // view

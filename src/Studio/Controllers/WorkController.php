@@ -40,7 +40,6 @@ class WorkController extends BaseController implements ControllerProviderInterfa
 
     public function getResponse(Request $request):string{
         // menu helper for tabmenu and color menu
-        $menuHelper = new MenuHelper($this->app, $this->context);
 
         // get req parameters
         $main_menu_item = $request->get('main_menu');
@@ -51,8 +50,8 @@ class WorkController extends BaseController implements ControllerProviderInterfa
         $code = $request->get('code');
         $bgcolor = $request->get('bgcolor');
 
-        $tabmenu_items = $menuHelper->getTabMenuItems_work($main_menu_item, $galleries, $tab_menu, $gallery_type, $slice_nr);
-        $colormenu_items = $menuHelper->getColorMenuItems_work($main_menu_item, $tab_menu, $gallery_type, $slice_nr, $code);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems_work($main_menu_item, $galleries, $tab_menu, $gallery_type, $slice_nr);
+        $colormenu_items = $this->menuHelper->getColorMenuItems_work($main_menu_item, $tab_menu, $gallery_type, $slice_nr, $code);
 
         // set context
         $this->context['bgcolor'] = $bgcolor;
@@ -60,7 +59,7 @@ class WorkController extends BaseController implements ControllerProviderInterfa
         $this->context['back_url'] = $tabmenu_items[0]->href;
         $this->context['colormenu_items'] = $colormenu_items;
         $this->context['select_background_color'] = $this->helper->trans('page.work.select_background_color');
-        $this->context['img_src_background_transp'] = $this->helper->getBaseUrl() . '/resources/appImages/Achtergr_transp.gif';
+        $this->context['img_src_background_transp'] = $this->helper->getBaseUrl() . '/web/resources/appImages/Achtergr_transp_110x110px.png';
         $this->context['back_button_caption'] = $this->helper->trans('page.work.back_button_caption');
 
         // get row holding work

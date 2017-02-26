@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\Studio\Controllers;
+use StudioTests\Controllers\WebTestCase_base;
 
 class WelcomeControllerTest extends WebTestCase_base
 {

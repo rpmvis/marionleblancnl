@@ -11,11 +11,13 @@ class BaseController{
     protected $helper;
     protected $context;
     protected $locale;
+    protected $menuHelper;
 
     public function __construct(Helper $helper) {
         $this->helper = $helper;
-        $this->app = $this->helper->getMyApp();
+        $this->menuHelper= $helper->menuHelper();
         $this->context = $helper->getContext();
+        $this->app = $this->helper->my_app();
         $this->locale = $this->context['locale'];
         $this->iniRoutes();
     }

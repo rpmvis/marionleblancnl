@@ -17,7 +17,7 @@
 
             @if ($count > 1)
                 <li class="icon">
-                    <a href="javascript:void(0);" style="font-size:15px;" onclick="click_myTabnav()">☰</a>
+                    <a href="javascript:void(0);" onclick="click_myTabnav()">☰</a>
                 </li>
             @endif
         </ul>

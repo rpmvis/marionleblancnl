@@ -22,10 +22,9 @@ class CvController extends BaseController implements ControllerProviderInterface
 
     public function getResponse(Request $request):string{
         // set tabmenu_items
-        $menuHelper = new MenuHelper($this->app, $this->context);
         $main_menu = $this->context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
-        $tabmenu_items = $menuHelper->getTabMenuItems($main_menu, $active_tabmenu);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
         $this->context['tabmenu_items'] = $tabmenu_items;
 
         // set view data

@@ -4,7 +4,6 @@ namespace app;
 
 use Silex\Application;
 
-
 class MyApplication extends Application
 {
     // class MyApplication: extension of Silex application

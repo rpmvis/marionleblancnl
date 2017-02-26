@@ -14,15 +14,16 @@ class MenuHelper{
     protected $context;
     protected $active_menu = '';
 
-    public function __construct(MyApplication $app, array $context){
-        $this->app = $app;
-        $this->helper = new Helper($app);
-        $this->context = $context;
-        $this->active_menu = $context['active_menu'];
+    public function __construct(Helper $helper){
+        $this->helper = $helper;
+        $this->app = $helper->my_app();
     }
 
-    public function getTopMenuItems():array{
+    public function getTopMenuItems(array $context):array{
         // get array of menu items for Top Menu
+        $this->context = $context;
+        $this->active_menu = $this->context['active_menu'];
+
         $locale = $this->context['locale'];
 
         $keys = array(
@@ -61,7 +62,7 @@ class MenuHelper{
         return $items;
     }
 
-    public function getTabMenuItems(string $main_menu_item, string $active_tabmenu):array{
+    public function getTabMenuItems(string $main_menu_item, string $active_tabmenu, string $locale):array{
         // get array of tab menu items
         // tab menu is 2nd level menu and depends on $main_menu_item
         switch($main_menu_item){
@@ -89,7 +90,6 @@ class MenuHelper{
                     'literature');
                 break;
             case 'contact':
-                $locale = $this->context['locale'];
                 $keys = array('contact', 'studio_visit', 'links','about_this_site');
                 if ($locale !== 'nl'){
                     $key = array_search('studio_visit', $keys);

@@ -1,4 +1,4 @@
-# dev parameters
+# development parameters
 parameters:
     log_level:  DEBUG
     #--- TimeZone: UTC, Europe/Kiev...
@@ -8,9 +8,6 @@ parameters:
 
     # debug: true, false ---
     debug: true
-
-    # environment: production, test, development ---
-    environment: development
 
     # host url for local testing ---
     url_test: 'http://localhost:8888'
@@ -36,3 +33,4 @@ parameters:
     mail.encryption: 'tls' # ('tls', 'ssl', or null)
     mail.auth_mode: 'login' # ('plain', 'login', 'cram-md5', or null)
     mail.disable_delivery:  true
+

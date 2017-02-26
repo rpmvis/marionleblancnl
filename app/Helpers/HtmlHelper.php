@@ -48,7 +48,7 @@ class HtmlHelper{
         $s = $this->replaceCloseTag('TR', $replace, $s);
         $s = $this->replaceCloseTag('TD', $replace, $s);
 
-        $find    = "<img height='12' width='12' src='http://www.marionleblanc.nl/appImages/BlueDot.gif'>";
+        $find    = "<img height='12' width='12' src='http://www.marionleblanc.nl/web/appImages/BlueDot.gif'>";
         $replace = "{!! \$img_BlueDot !!}";
         $s = str_replace($find, $replace, $s);
 

@@ -11,6 +11,6 @@
         </li>
     @endforeach
     <li class="icon">
-        <a href="javascript:void(0);" style="font-size:15px;" onclick="click_myTopnav()">☰</a>
+        <a href="javascript:void(0);" onclick="click_myTopnav()">☰</a>
     </li>
 </ul>

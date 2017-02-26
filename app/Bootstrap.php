@@ -8,11 +8,9 @@ use Symfony\Component\Yaml\Yaml;
 use Sorien\Provider\PimpleDumpProvider;
 use Silex\Provider\DoctrineServiceProvider;
 use Aea\ServiceProvider\BladeServiceProvider;
-use Silex\Provider\HttpCacheServiceProvider;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\LocaleServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
-use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Provider\SessionServiceProvider;
@@ -20,6 +18,9 @@ use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use app\Helpers\Helper;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class Bootstrap
 {
@@ -29,6 +30,7 @@ class Bootstrap
      * @var MyApplication
      */
     protected $my_app;
+    protected $session;
 
     /**
      * Constructor
@@ -38,13 +40,17 @@ class Bootstrap
     {
         $this->my_app = $my_app;
 
+        define( 'PATH_ROOT', realpath(__DIR__ . "/..") );
+
         // init config
         $this->_iniConfig($my_app);
 
         // initialize providers
+        $this->_iniSessionProvider($my_app);
+
         $this->_iniProviders($my_app);
 
-        $helper = new Helper($my_app);
+        $helper = new Helper($my_app, $this->session );
         $helper->setContext();
 
         // load routes
@@ -52,14 +58,14 @@ class Bootstrap
 
         // set session variable 'previous_route'
         // it is used by the FlagController.Redirect method
-        $uri = $_SERVER['REQUEST_URI'];
-        if (isset($uri)) {
-            // do NOT match "/favicon.ico" or "/nl/flag" or "en/flag"
+        // previous_route: do NOT match "/favicon.ico" or "/nl/flag" or "en/flag"
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $uri = $_SERVER['REQUEST_URI'];
             $pattern_favicon = "/^\/favicon.ico/";
-            $pattern_flag = "/^\/nl|en\/flag\/$/";
+            $pattern_flag = "/^\/nl|en\/flag/";
             if (preg_match($pattern_favicon, $uri) === 0 &&
                 preg_match($pattern_flag, $uri) === 0) {
-                $this->my_app['session']->set('previous_route', $uri);
+                $this->session->set('previous_route', $uri);
             }
         }
     }
@@ -80,14 +86,17 @@ class Bootstrap
             $params = array();
             //---------------------
             $params['path_root'] = PATH_ROOT;
-//            $fileConfig =
-//                is_file(PATH_ROOT.'/env.yml') ?
-//                PATH_ROOT.'/../env.yml' :
-//                PATH_ROOT.'/app/config/parameters_dev.yml';
+            $fileConfig = PATH_ROOT.'/app/config/environment.yml';
+            $contents = file_get_contents($fileConfig);
+            $data = Yaml::parse($contents);
+            foreach ($data['parameters'] as $key => $value) {
+                $params['parameters'][$key] = $this->_formatIniValue($value);
+            }
+            define( 'APP_ENV', $params['parameters']['environment']);
             $fileConfig =
-                APP_ENV === 'dev'?
-                    PATH_ROOT.'/app/config/parameters_dev.yml' :
-                    PATH_ROOT.'/app/config/parameters_prod.yml';
+                APP_ENV === 'prod'?
+                    PATH_ROOT.'/app/config/parameters_prod.yml' :
+                    PATH_ROOT.'/app/config/parameters_dev.yml';
 
             $contents = file_get_contents($fileConfig);
             $data = Yaml::parse($contents);
@@ -153,11 +162,35 @@ class Bootstrap
         return $value;
     }
 
+    private function _iniSessionProvider(MyApplication $my_app) {
+        // initialize Session provider
+
+        $bTest = APP_ENV === 'test'? true : false;
+
+        if (!$bTest) {
+            $my_app->register(
+                new SessionServiceProvider(),
+                array(
+                    'session.storage.save_path' => PATH_ROOT.'/cache/sessions'
+                )
+            );
+            $my_app->before(
+                function (Request $request) {
+                    $request->getSession()->start();
+                    $my_app['request'] = $request;
+                }
+            );
+            $this->session = $this->my_app['session'];
+        } else {
+            $this->session = new Session(new MockArraySessionStorage());
+        }
+    }
+
     private function _iniProviders(MyApplication $my_app) {
         // initialize providers
 
         // PimpleDump
-        if (APP_ENV === 'dev')
+        if (APP_ENV !== 'prod')
         $my_app->register(new PimpleDumpProvider());
 
         // validator
@@ -173,16 +206,6 @@ class Bootstrap
             'blade.view_path' => $path,
             'blade.cache_path' => PATH_ROOT . '/cache'
         ));
-
-        // session
-        $my_app->register(new SessionServiceProvider(), array(
-            'session.storage.save_path' => PATH_ROOT.'/cache/sessions'));
-        $my_app->before(
-            function (Request $request) {
-                $request->getSession()->start();
-                $my_app['request'] = $request;
-            }
-        );
 
         $config_prms = $my_app['config']['parameters'];
         $my_app->register(new SwiftmailerServiceProvider());

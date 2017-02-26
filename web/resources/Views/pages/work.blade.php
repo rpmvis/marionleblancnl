@@ -11,8 +11,8 @@
     {{--image--}}
     <div class="work_col work_content" style="text-align: center" >
         <a href='{{ $context['back_url'] }}'>
-            <img src='{{ $work->img_src }}' height='{{{ $work->img_height }}}' width='{{{ $work->img_width }}}'
-                 border='0' ALT='{{ $work->img_alt }}'>
+            {{--<img src='{{ $work->img_src }}' height='{{{ $work->img_height }}}' width='{{{ $work->img_width }}}'--}}
+            <img src='{{ $work->img_src }}' ALT='{{ $work->img_alt }}'>
         </a>
     </div>
 </div>
@@ -39,15 +39,17 @@
         <br>
         <img class = 'img_background_transp' src='{{ $context['img_src_background_transp'] }}' useMap='#achtergronden'>
         <map name='achtergronden'>
-            <area coords=  '0,0, 12,12' href='{{ $color_items['white']->href }}'       shape=RECT alt = '{{ $color_items['white']->alt }}'>
-            <area coords= '16,0, 28,12' href='{{ $color_items['soft_yellow']->href }}' shape=RECT alt = '{{ $color_items['soft_yellow']->alt }}'>
-            <area coords= '32,0, 44,12' href='{{ $color_items['yellow']->href }}'      shape=RECT alt = '{{ $color_items['yellow']->alt }}'>
-            <area coords= '48,0, 60,12' href='{{ $color_items['soft_peach']->href }}'  shape=RECT alt = '{{ $color_items['soft_peach']->alt }}'>
-            <area coords= '64,0, 76,12' href='{{ $color_items['peach']->href }}'       shape=RECT alt = '{{ $color_items['peach']->alt }}'>
-            <area coords= '80,0, 92,12' href='{{ $color_items['soft_green']->href }}'  shape=RECT alt = '{{ $color_items['soft_green']->alt }}'>
-            <area coords= '96,0,108,12' href='{{ $color_items['green']->href }}'       shape=RECT alt = '{{ $color_items['green']->alt }}'>
-            <area coords='112,0,124,12' href='{{ $color_items['soft_blue']->href }}'   shape=RECT alt = '{{ $color_items['soft_blue']->alt }}'>
-            <area coords='128,0,140,12' href='{{ $color_items['blue']->href }}'        shape=RECT alt = '{{ $color_items['blue']->alt }}'>
+            <area coords= '0,0,  30,30' href='{{ $color_items['white']->href }}'       shape=RECT alt = '{{ $color_items['white']->alt }}'>
+            <area coords='40,0,  70,30' href='{{ $color_items['soft_yellow']->href }}' shape=RECT alt = '{{ $color_items['soft_yellow']->alt }}'>
+            <area coords='80,0, 110,30' href='{{ $color_items['yellow']->href }}'      shape=RECT alt = '{{ $color_items['yellow']->alt }}'>
+
+            <area coords= '0,40,  30,70' href='{{ $color_items['soft_peach']->href }}'  shape=RECT alt = '{{ $color_items['soft_peach']->alt }}'>
+            <area coords='40,40,  70,70' href='{{ $color_items['peach']->href }}'       shape=RECT alt = '{{ $color_items['peach']->alt }}'>
+            <area coords='80,40, 110,70' href='{{ $color_items['soft_green']->href }}'  shape=RECT alt = '{{ $color_items['soft_green']->alt }}'>
+
+            <area coords= '0,80,  30,110' href='{{ $color_items['green']->href }}'       shape=RECT alt = '{{ $color_items['green']->alt }}'>
+            <area coords='40,80,  70,110' href='{{ $color_items['soft_blue']->href }}'   shape=RECT alt = '{{ $color_items['soft_blue']->alt }}'>
+            <area coords='80,80, 110,110' href='{{ $color_items['blue']->href }}'        shape=RECT alt = '{{ $color_items['blue']->alt }}'>
         </map>
     </div>
 </div>

@@ -11,7 +11,7 @@ $max_width_column1 = '';
 if (count($field_names) > 1){
     switch ($form_type){
         case 'welcome': $width = 300; break;
-        case 'about_the_work.literature': $width = 350; break;
+        case 'about_the_work.literature': $width = 320; break;
         default: $width = 85; break;
     }
     if ($width > 0)
@@ -46,10 +46,10 @@ if (count($field_names) > 1){
 <div class='grid-row'>
 
     @foreach ($field_names as $name)
-    <?php
-        $count +=1;
-        $class = ($count ==1)? ' max-width-column1': '';
-    ?>
+        <?php
+            $count +=1;
+            $class = ($count ==1)? ' max-width-column1': '';
+        ?>
     <div class="grid-item{{ $class }}">{!! $row[$name] !!}</div>
     @endforeach
 </div>
