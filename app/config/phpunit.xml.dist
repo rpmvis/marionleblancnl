@@ -9,11 +9,14 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="./../vendor/autoload.php"
+         bootstrap="app/phpunit_bootstrap.php"
 >
     <testsuites>
-        <testsuite name="Studio Test Suite">
-            <directory>./../tests/</directory>
+        <testsuite name="Silex Test Suite">
+            <directory>./vendor/Silex/tests/Silex/</directory>
         </testsuite>
+        <!--<testsuite name="Your Project Test Suite">-->
+        <!--<directory>./src/YourProject/</directory>-->
+        <!--</testsuite>-->
     </testsuites>
 </phpunit>
