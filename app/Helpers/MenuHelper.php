@@ -2,29 +2,38 @@
 
 namespace app\Helpers;
 
-use app\MyApplication;
-use Silex\Exception;
+use Pimple\ServiceProviderInterface;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+use app\Services\RequestUriServiceProvider;
 
-class MenuHelper{
+class MenuHelper implements ServiceProviderInterface{
     // get menu for TopMenu or TabMenu or ColorMenu
     // TopMenu and TabMenu are 1st level and 2nd level menu's
     // ColorMenu is only used in Work page "work.blade"
-    protected $app;
     protected $helper;
+    protected $uri;
+    protected $url_generator;
     protected $context;
+    protected $menu_context;
     protected $active_menu = '';
+    protected $locale;
 
-    public function __construct(Helper $helper){
-        $this->helper = $helper;
-        $this->app = $helper->my_app();
+    public function register(\Pimple\Container $app)
+    {
+        $app['menuhelper'] = function () {
+            return $this;
+        };
     }
 
-    public function getTopMenuItems(array $context):array{
-        // get array of menu items for Top Menu
-        $this->context = $context;
-        $this->active_menu = $this->context['active_menu'];
+    public function __construct(Helper $helper, RequestUriServiceProvider $uri, UrlGenerator $url_generator){
+        $this->helper = $helper;
+        $this->uri = $uri;
+        $this->url_generator = $url_generator;
+    }
 
-        $locale = $this->context['locale'];
+    public function getTopMenuItems():array{
+        // get array of menu items for Top Menu
+        $this->active_menu = $this->menu_context['active_menu'];
 
         $keys = array(
             'welcome','gall/galleries1','gall/galleries2',
@@ -44,7 +53,7 @@ class MenuHelper{
             if ($key !== 'flag'){
                 $item->href = "/$key";
             } else {
-                if ($locale === 'nl'){
+                if ($this->locale === 'nl'){
                     $locale2 = 'en';
                     $item->img_src  = $this->context['img_src_UK_flag'];
                 } else {
@@ -62,7 +71,7 @@ class MenuHelper{
         return $items;
     }
 
-    public function getTabMenuItems(string $main_menu_item, string $active_tabmenu, string $locale):array{
+    public function getTabMenuItems(string $main_menu_item, string $active_tabmenu):array{
         // get array of tab menu items
         // tab menu is 2nd level menu and depends on $main_menu_item
         switch($main_menu_item){
@@ -91,7 +100,7 @@ class MenuHelper{
                 break;
             case 'contact':
                 $keys = array('contact', 'studio_visit', 'links','about_this_site');
-                if ($locale !== 'nl'){
+                if ($this->locale !== 'nl'){
                     $key = array_search('studio_visit', $keys);
                     unset($keys[$key]);}
                 break;
@@ -99,7 +108,7 @@ class MenuHelper{
                 $keys = array('cv');
                 break;
             default:
-                $msg = "unknown tabmenu_type '$main_menu_item'!";
+                $msg = "unknown main_menu_item '$main_menu_item'!";
                 throw new \Exception($msg);
                 break;
         }
@@ -140,7 +149,7 @@ class MenuHelper{
         $item->caption = $caption;
 
         // set href property, holding url that points back to the 2nd level gallery tabmenu
-        $url = $this->app['url_generator']
+        $url = $this->url_generator
             ->generate('galleries', array(
                     'galleries' => $galleries,
                     'tab_menu' => $tab_menu,
@@ -182,7 +191,7 @@ class MenuHelper{
             $item = new ColorMenuItem();
 
             // url to specific icon
-            $url = $this->app['url_generator']
+            $url = $this->url_generator
                 ->generate('work',array(
                         'main_menu' =>$main_menu_item,
                         'tab_menu' => $tab_menu,
@@ -204,6 +213,35 @@ class MenuHelper{
         }
         return $items;
     }
+
+    function setMenuContext()
+    {
+        $this->context = $this->helper->getContext();
+        $this->locale = $this->context['locale'];
+
+        $url = $this->uri->uri();
+        if ($url !== null) {
+            $arr = explode("/", substr($url, 1));
+            $active_menu = $arr[0];
+        } else {
+            $active_menu = '';
+        }
+
+        if (empty($active_menu)) {
+            $active_menu = 'welcome';
+        } elseif ($active_menu === 'gall') {
+            $active_menu .= "/$arr[1]"; // gall/galleries1 or gall/galleries2
+        }
+        $this->menu_context['active_menu'] = $active_menu;
+        $this->menu_context['menu_items'] = $this->getTopMenuItems();
+    }
+
+    function getMenuContext(): array
+    {
+        // get array of context items
+        // to be used in controllers and views
+        return $this->menu_context;
+    }
 }
 
 
@@ -220,3 +258,4 @@ class ColorMenuItem{
     public $href;
     public $alt = '';
 }
+

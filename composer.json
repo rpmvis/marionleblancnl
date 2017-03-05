@@ -1,7 +1,6 @@
 {
     "require": {
         "php": "^7.0",
-        "silex/silex": "^2.0",
         "symfony/yaml": "^3.1",
         "doctrine/dbal": "^2.5",
         "sorien/silex-pimple-dumper": "^2.0",
@@ -11,19 +10,25 @@
         "symfony/translation": "^3.1",
         "symfony/config": "^3.1",
         "symfony/validator": "^3.1",
-        "swiftmailer/swiftmailer": "^5.4"
-    },
-    "autoload": {
-        "classmap": [
-            "tests/"
-        ],
-        "psr-0": {
-            "Studio\\"		: "src/",
-            "app\\"         : ""
-        }
+        "swiftmailer/swiftmailer": "^5.4",
+        "silex/silex": "^2.0",
+        "phpunit/phpunit": "^6.0",
+        "monolog/monolog": "^1.22"
     },
     "require-dev": {
         "symfony/browser-kit": "^3.2",
         "symfony/css-selector": "^3.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "Studio\\"		  : "src/",
+            "phpUnitTutorial" : "src/",
+            "app\\"           : ""
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "src"
+        ]
     }
 }

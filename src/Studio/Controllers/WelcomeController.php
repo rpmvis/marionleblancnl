@@ -2,30 +2,32 @@
 
 namespace Studio\Controllers;
 
-use app\MyApplication;
 use app\Helpers\Helper;
+use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
-use Silex;
-use Illuminate\View\View;
+use Symfony\Component\Routing\Generator\UrlGenerator;
 
 class WelcomeController extends BaseController implements ControllerProviderInterface{
-
-    public function __construct(Helper $helper){
-        parent::__construct($helper);
+    protected $url_generator;
+    protected $blade;
+    
+    public function __construct(Helper $helper, MenuHelper $menuHelper, UrlGenerator $url_generator, BladeProxy $blade){
+        parent::__construct($helper, $menuHelper);
+        $this->url_generator = $url_generator;
+        $this->blade = $blade;
     }
 
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->get("", function(){return $this->getResponse();}
-        )
-        ->bind('/');
+        $controller = $controllers->get("", function(){return $this->getResponse();}
+        )->bind('/');
 
         $controllers->get("welcome/", function(){return $this->getResponse();}
-        )
-        ->bind('welcome');
+        )->bind('welcome');
 
         return $controllers;
     }
@@ -40,7 +42,7 @@ class WelcomeController extends BaseController implements ControllerProviderInte
         $field_names = array('descr', 'img');
         $rows = $this->helper->transRows($key1, $field_names, 'ASC');
 
-        $url = $this->app['url_generator']
+        $url = $this->url_generator
             ->generate('galleries1', array('galleries'=>'galleries1'));
         $url_caption = $this->helper->transValue($key1, 'href_gallery1'); // "eerste galerij" or "first gallery"
         $url_caption = strip_tags($url_caption);
@@ -60,10 +62,10 @@ class WelcomeController extends BaseController implements ControllerProviderInte
         $values['table_header'] = $header;
         $values['table_field_names'] = $field_names;
         $values['table_rows'] = $rows;
-        $data = array('context' => $this->context, 'values'=> $values);
+        $data = array('context' => $this->context, 'menu_context' => $this->menu_context, 'values'=> $values);
 
         // return view
-        $view = $this->app['blade']->view('layouts.tabular', $data);
+        $view = $this->blade->view('layouts.tabular', $data);
         return $view;
         // ***
     }

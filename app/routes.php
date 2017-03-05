@@ -20,20 +20,20 @@ try {
     // c) define route(s)
 
     // a) mount application controllers
-    $this->my_app->mount('/', new WelcomeController($helper));
-    $this->my_app->mount('/gall/', new GalleryController($helper));
-    $this->my_app->mount('/work/', new WorkController($helper));
-    $this->my_app->mount('/exhibitions/', new ExhibitionsController($helper));
-    $this->my_app->mount('/about_the_work/', new AboutTheWorkController($helper));
-    $this->my_app->mount('/cv/', new CvController($helper));
-    $this->my_app->mount('/contact/', new ContactController($helper));
-    $this->my_app->mount('/{language}/flag/', new FlagController($helper));
+    $this->my_app->mount('/', new WelcomeController($helper, $menuHelper, $url_generator, $blade));
+    $this->my_app->mount('/gall/', new GalleryController($helper, $menuHelper, $url_generator, $blade, $db));
+    $this->my_app->mount('/work/', new WorkController($helper, $menuHelper, $blade, $db));
+    $this->my_app->mount('/exhibitions/', new ExhibitionsController($helper, $menuHelper, $blade));
+    $this->my_app->mount('/about_the_work/', new AboutTheWorkController($helper, $menuHelper, $blade));
+    $this->my_app->mount('/cv/', new CvController($helper, $menuHelper, $url_generator, $blade));
+    $this->my_app->mount('/contact/', new ContactController($helper, $menuHelper, $url_generator, $visitor, $mailer, $blade, $config_parameters));
+    $this->my_app->mount('/{language}/flag/', new FlagController($helper, $menuHelper, $session, $url_generator, $redirect));
 
     // b) mount util controllers
-    $this->my_app->mount('/default/', new DefaultController($helper));
-    $this->my_app->mount('/demo/', new DemoController($helper));
-    $this->my_app->mount('/regex/', new RegExController($helper));
-    $this->my_app->mount('/html_helper/', new HtmlController($helper));
+    $this->my_app->mount('/default/', new DefaultController($helper, $menuHelper, $blade));
+    $this->my_app->mount('/demo/', new DemoController($helper, $menuHelper));
+    $this->my_app->mount('/regex/', new RegExController($blade));
+    $this->my_app->mount('/html_helper/', new HtmlController($blade));
 
     // c) define route(s)
     $this->my_app->get('/test_CSS', function() use ($helper)  {

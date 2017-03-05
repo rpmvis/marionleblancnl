@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./../../vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="Studio Test Suite">
+            <directory>./../../src/Studio/Tests/</directory>
+        </testsuite>
+        <!--<testsuite name="Studio Test Suite">-->
+            <!--<directory>./../../vendor/silex/silex/tests/Silex/Tests/</directory>-->
+        <!--</testsuite>-->
+
+        /home/rene/Silex/studio//Application/SwiftmailerApplication.php
+        <!--<testsuite name="Application Test Suite">-->
+            <!--<directory>./../../src/phpUnitTutorial/Tests/</directory>-->
+        <!--</testsuite>-->
+    </testsuites>
+
+    <!--<filter>-->
+        <!--<whitelist>-->
+            <!--<directory>./../../src/phpUnitTutorial</directory>-->
+            <!--<exclude>-->
+                <!--<directory></directory>-->
+            <!--</exclude>-->
+        <!--</whitelist>-->
+    <!--</filter>-->
+
+    <!--<logging>-->
+        <!--<log type="coverage-html" target="./../../tests/coverage/"/>-->
+    <!--</logging>-->
+
+    <php>
+        <env name="BROWSER" value="chrome"/>
+    </php>
+</phpunit>

@@ -1,6 +1,6 @@
 <?php
 
-use StudioTests\Controllers\WebTestCase_base;
+use Studio\Tests\Controllers\WebTestCase_base;
 
 class CvControllerTest extends WebTestCase_base
 {

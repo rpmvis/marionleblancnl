@@ -2,10 +2,21 @@
 
 namespace Studio\Controllers;
 
+use app\Helpers\Helper;
+use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
 
 class DefaultController extends BaseController implements ControllerProviderInterface{
+    protected $blade;
+
+    public function __construct(Helper $helper, MenuHelper $menuHelper, BladeProxy $blade){
+        parent::__construct($helper, $menuHelper);
+
+        $this->blade = $blade;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -28,8 +39,8 @@ class DefaultController extends BaseController implements ControllerProviderInte
         }
 
         $values = array('welcome'=>$welcome);
-        $data = array('context' => $this->context, 'values'=> $values);
-        $view = $this->app['blade']->view('layouts.default', $data);
+        $data = array('context' => $this->context, 'menu_context' => $this->menu_context, 'values'=> $values);
+        $view = $this->blade->view('layouts.default', $data);
         return $view;
     }
 }

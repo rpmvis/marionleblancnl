@@ -1,7 +1,7 @@
 
-@if(isset($context['tabmenu_items']))
+@if(isset($menu_context['tabmenu_items']))
     @php
-        $items = $context['tabmenu_items'];
+        $items = $menu_context['tabmenu_items'];
         $count = count($items);
     @endphp
     @section('tab_menu')

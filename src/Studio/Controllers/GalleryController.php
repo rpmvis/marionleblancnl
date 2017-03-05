@@ -2,20 +2,27 @@
 // src/Studio/Controller/WorkController.php
 namespace Studio\Controllers;
 
-use app\MyApplication;
 use app\Helpers\Helper;
 use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Api\ControllerProviderInterface;
+use Doctrine\DBAL\Connection;
+use Symfony\Component\Routing\Generator\UrlGenerator;
 
 class GalleryController extends BaseController implements ControllerProviderInterface{
-
+    protected $url_generator;
+    protected $blade;
     protected $db;
 
-    public function __construct(Helper $helper)  {
-        parent::__construct($helper);
-        $this->db = $this->app['db'];
+    public function __construct(Helper $helper, MenuHelper $menuHelper,
+                                UrlGenerator $url_generator, BladeProxy $blade, Connection $db)  {
+        parent::__construct($helper, $menuHelper);
+
+        $this->url_generator = $url_generator;
+        $this->blade = $blade;
+        $this->db = $db;
         define('ICON_HEIGHT', 120);
         define('ICON_WIDTH', 120);
         define('SLICE_SIZE', 16);
@@ -64,7 +71,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
         $gallery_type= $request->get('gallery_type');
         $slice_nr= (int)$request->get('slice_nr');
 
-        $main_menu_item = $this->context['active_menu'];
+        $main_menu_item = $this->menu_context['active_menu'];
         $active_tabmenu = "$tab_menu/$gallery_type/".(string)$slice_nr; // e.g.: "gallery2/g/2"
 
         // calc $galerie_volgnr
@@ -116,11 +123,11 @@ class GalleryController extends BaseController implements ControllerProviderInte
 
         // get tabmenu items
         $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu_item, $active_tabmenu, $this->locale);
-        $this->context['tabmenu_items'] = $tabmenu_items;
+        $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // view
-        $data = array('context'=>$this->context, 'icons' => $aIcons);
-        $view = $this->app['blade']->view('pages.gallery', $data);
+        $data = array('context'=>$this->context, 'menu_context' => $this->menu_context, 'icons' => $aIcons);
+        $view = $this->blade->view('pages.gallery', $data);
         return $view;
     }
 
@@ -161,7 +168,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
         $oIcon->width = $width;
 
         // url to specific icon
-        $url = $this->app['url_generator']
+        $url = $this->url_generator
             ->generate('work', array(
                     'main_menu' =>$main_menu_item, // gall/galeries1 or gall/galeries2
                     'tab_menu' => $tab_menu,

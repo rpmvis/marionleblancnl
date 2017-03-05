@@ -2,13 +2,20 @@
 
 namespace Studio\Controllers;
 
+use Aea\Model\BladeProxy;
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use app\Helpers\HtmlHelper;
 
-class HtmlController extends BaseController implements ControllerProviderInterface
+class HtmlController implements ControllerProviderInterface
 {
+    protected $blade;
+    
+    public function __construct(BladeProxy $blade){
+        $this->blade = $blade;
+    }    
+    
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -26,7 +33,7 @@ class HtmlController extends BaseController implements ControllerProviderInterfa
     }
 
     public function getResponse():string{
-        $view = $this->app['blade']->view('helpers.html_helper');
+        $view = $this->blade->view('helpers.html_helper');
         return $view;
     }
 
@@ -36,7 +43,7 @@ class HtmlController extends BaseController implements ControllerProviderInterfa
         $html_output = $helper->convertTable($html_input);
 
         $values = array('html_input' =>$html_input, 'html_output'=>$html_output);
-        $view = $this->app['blade']->view('helpers.html_helper', $values);
+        $view = $this->blade->view('helpers.html_helper', $values);
         return $view;
     }
 }

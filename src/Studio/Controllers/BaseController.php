@@ -2,22 +2,21 @@
 
 namespace Studio\Controllers;
 
-use app\MyApplication;
 use app\Helpers\Helper;
-//use Symfony\Component\HttpFoundation\RequestStack;
+use app\Helpers\MenuHelper;
 
 class BaseController{
-    protected $app;
     protected $helper;
     protected $context;
+    protected $menu_context;
     protected $locale;
     protected $menuHelper;
 
-    public function __construct(Helper $helper) {
+    public function __construct(Helper $helper, MenuHelper $menuHelper) {
         $this->helper = $helper;
-        $this->menuHelper= $helper->menuHelper();
+        $this->menuHelper= $menuHelper;
         $this->context = $helper->getContext();
-        $this->app = $this->helper->my_app();
+        $this->menu_context = $menuHelper->getMenuContext();
         $this->locale = $this->context['locale'];
         $this->iniRoutes();
     }

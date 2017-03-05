@@ -1,0 +1,395 @@
+/* LAYOUT DIV'S BEGIN
+   too narrow to support three columns in default layout*/
+@media all and (max-width: 640px) {
+    #main, #page {
+        flex-direction: column;
+        background-color: aqua;
+    }
+
+    #main > mainbox, #main > leftbox, #main > rightbox {
+        /* return them to document order */
+        order: 0;
+    }
+
+    #main > leftbox, #main > rightbox {
+        display: none;
+        min-height: 0px;
+        max-height: 0px;
+    }
+
+    header {
+        min-height: 50px;
+        max-height: 50px;
+    }
+
+    footer{
+        /*min-height: 10px;*/
+        /*max-height: 15px;*/
+    }
+    /* LAYOUT DIV'S END */
+}
+
+
+@media screen and (max-width: 680px) {
+    /* MENU BEGIN
+       hide all menu items, except active item */
+    /* hide all but first item, so Logo Marion will be hidden */
+    ul.headernav li:not(:first-child) {
+        display: none;
+    }
+
+    /* all menu items invisible */
+    ul.topnav li {
+        display: none;
+    }
+
+    /* except active menu item */
+    ul.topnav li.active {
+        float: left;
+        display: inline-block;
+    }
+
+    /* except ☰ icon toggle button*/
+    ul.topnav li.icon {
+        /*float: right;*/
+        display: inline-block;
+    }
+    /* MENU END */
+}
+
+/*@media screen and (max-width: 680px) {*/
+    /*!* MENU BEGIN responsive *!*/
+    /*ul.topnav.responsive {position: relative;}*/
+
+    /*!* show ☰ icon toggle button *!*/
+    /*ul.topnav.responsive li.icon {*/
+        /*position: absolute;*/
+        /*right: 0;*/
+        /*top: 0;*/
+    /*}*/
+
+    /*!* show every li item *!*/
+    /*ul.topnav.responsive li {*/
+        /*float: none;*/
+        /*display: inline;*/
+    /*}*/
+
+    /*!* show every li a item *!*/
+    /*ul.topnav.responsive li a {*/
+        /*display: block;*/
+        /*text-align: left;*/
+    /*}*/
+    /*!* MENU END responsive *!*/
+/*}*/
+
+/*@media (max-width: 400px) {*/
+    /*.grid-row {*/
+        /*flex-direction: column ;*/
+    /*}*/
+/*}*/
+
+
+#main {
+    font-size: 14px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-style:	normal;
+    font-weight: normal;
+    text-decoration: none;
+    word-spacing:	normal;
+    letter-spacing:	normal;
+    text-transform:	none;
+    background-color: white;
+    min-height: 300px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row;
+}
+
+#main > leftbox {
+    margin: 0px;
+    padding: 0px;
+    /*border: 1px solid #8888bb;*/
+    border-radius: 0pt;
+    background: white;
+    flex: 1 6 10%;
+    order: 1;
+}
+
+#main > mainbox{
+    margin: 0px;
+    /*border: 1px solid #cccc33;*/
+    border-radius: 0pt;
+    flex: 3 1 80%;
+    padding: 0px;
+    order: 2;
+}
+
+#main > rightbox {
+    margin: 0px;
+    padding: 0px;
+    /*border: 1px solid #8888bb;*/
+    border-radius: 0pt; /* 7pt */
+    flex: 1 6 10%;
+    order: 3;
+}
+
+header, footer {
+    display: block;
+    margin: 0px;
+    padding: 5px;
+    min-height: 10px;
+    /*border: 1px solid #eebb55;*/
+    border-radius: 0pt; /* 7pt */
+}
+
+/* navigation */
+ul.topnav, ul.headernav {
+    list-style-type: none;
+    margin: 0px;
+    padding: 5px;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+}
+
+ul.topnav li,
+ul.headernav li {float: left;}
+
+ul.topnav li a {
+    text-decoration: none;
+    color: #3333cc;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 12px;
+    transition: 0.3s;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+/*LVHA-order: :link — :visited — :hover — :active.*/
+ul.topnav li a:visited {
+    text-decoration:	none;
+    color: #3333cc;
+}
+
+/*ul.topnav li a:link {*/
+    /*text-decoration:	none;*/
+    /*color: #4CAF50;*/
+/*}*/
+
+ul.topnav li a:hover {
+    text-decoration: underline;
+    color: #cc00ff;
+}
+
+ul.topnav li a.active {
+    text-decoration: none;
+    color:	#ff1aee;
+}
+
+ul.topnav li.icon {display: none;}
+
+/*anchors for hyperlinks*/
+a{font-size: 14px;}
+
+/*LVHA-order: :link — :visited — :hover — :active.*/
+a:link {
+    text-decoration:	none;
+    color:	#3333cc;
+}
+
+a:visited {
+    text-decoration:	none;
+    color: #3333cc;
+}
+
+a:hover{
+    text-decoration:	underline;
+    color: #cc00ff;
+}
+
+a:active {
+    text-decoration: none;
+    color:	#cc00ff;
+}
+
+img.img_BlueDot {
+    height: 12px;
+    width: 12px;
+}
+
+img.img_home {
+    height: 400px;
+    align: left;
+    border: 0px;
+}
+
+img.img_logo{
+    border: 0;
+    float: right;
+}
+
+img.img_background_transp{
+    height: 13px;
+    width: 140px;
+    border: 0;
+}
+
+
+/* WORK */
+.work_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-work_content:center; /* alignment along main axis */
+    flex-wrap: wrap ;
+    flex-direction: row;
+}
+.work_col {
+    align-items: center;  /* alignment along cross axis */
+    flex: 1;
+    /*height: 160px;*/
+    /*display: flex;*/
+    flex-wrap: wrap;
+    text-align: center;
+    justify-work_content: center; /* alignment along main axis */
+    flex-direction: column;
+    min-width: 250px;
+}
+
+.work_col > p {
+    align-self: center;
+    justify-work_content: center; /* alignment along main axis */
+}
+
+.work_content {
+    color: black;
+    font-size: 14px;
+    margin: 0px;
+    padding: 5px;
+}
+
+.work_content a {
+    font-size: 12px;
+}
+
+
+/* GALLERY ICON */
+.icon_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    text-align: center;
+    justify-icon_content:center; /* alignment along main axis */
+    flex-wrap: wrap ;
+    flex-direction: row;
+}
+.icon_col {
+    align-items: center;  /* alignment along cross axis */
+    flex: 1;
+    height: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-icon_content: flex-start; /* alignment along main axis */
+    flex-direction: column;
+}
+
+.icon_col > p {
+    align-self: center;
+    justify-icon_content: center; /* alignment along main axis */
+}
+
+.icon_content {
+    color: black;
+    font-size: 11px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.icon_col > a > img{
+    border: 0;
+}
+
+.grid-row {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap ;
+
+    flex-direction: row;
+}
+
+.grid-item {
+    flex:1;
+    color: black;
+    padding: 2px;
+    margin: 0px;
+    margin-top: 10px;
+    align-items: inherit;
+    align-content: inherit;
+    justify-content: inherit;
+    text-align: left;
+
+    /*flex-wrap: wrap: multi-lines, direction is defined by flex-direction*/
+    flex-wrap: wrap
+
+    /*font-weight: normal;*/
+    /*font-size: 1em;*/
+}
+
+.footer{
+    padding: 15px 0 1px 0;
+    border-bottom: solid 1px #DEDEDE;
+    color: #666666;
+    width: 100%;
+    font-size: 10px;
+}
+
+/* padding */
+.padding5{
+    padding: 5px;
+}
+
+.padding10{
+    padding: 10px;
+}
+
+.padding20{
+    padding: 20px;
+}
+
+.padding_bottom_menu{
+    padding-bottom: 15px;
+}
+
+/* lettertypen */
+.Tekst_kleiner{
+    font-size: 11px;
+}
+
+.kop_Marion{
+    color: #000060;
+    font-size: 21px;
+    text-align: left;
+}
+
+.kop3{
+    font-size:	14px;
+    color: #ff1aee; /*roze-paars*/
+}

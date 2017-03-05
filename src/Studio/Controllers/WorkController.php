@@ -2,21 +2,25 @@
 // src/Studio/Controller/WorkController.php
 namespace Studio\Controllers;
 
-use app\MyApplication;
 use app\Helpers\Helper;
 use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
+use Doctrine\DBAL\Connection;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Api\ControllerProviderInterface;
 
 class WorkController extends BaseController implements ControllerProviderInterface{
+    protected $blade;
     protected $db;
     private $img_max_width = 400;
     private $img_max_height = 400;
 
-    public function __construct(Helper $helper)  {
-        parent::__construct($helper);
-        $this->db = $this->app['db'];
+    public function __construct(Helper $helper, MenuHelper $menuHelper, BladeProxy $blade, Connection $db)  {
+        parent::__construct($helper, $menuHelper);
+
+        $this->blade = $blade;
+        $this->db = $db;
     }
 
     public function connect(Application $app)
@@ -55,7 +59,7 @@ class WorkController extends BaseController implements ControllerProviderInterfa
 
         // set context
         $this->context['bgcolor'] = $bgcolor;
-        $this->context['tabmenu_items'] = $tabmenu_items;
+        $this->menu_context['tabmenu_items'] = $tabmenu_items;
         $this->context['back_url'] = $tabmenu_items[0]->href;
         $this->context['colormenu_items'] = $colormenu_items;
         $this->context['select_background_color'] = $this->helper->trans('page.work.select_background_color');
@@ -76,8 +80,8 @@ class WorkController extends BaseController implements ControllerProviderInterfa
         $oWork = $this->get_oWork($row);
 
         // view
-        $data = array('context'=>$this->context, 'work' => $oWork);
-        $view = $this->app['blade']->view('pages.work', $data);
+        $data = array('context'=>$this->context, 'menu_context' => $this->menu_context, 'work' => $oWork);
+        $view = $this->blade->view('pages.work', $data);
         return $view;
     }
 

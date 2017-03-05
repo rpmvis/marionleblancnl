@@ -18,9 +18,12 @@ use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use app\Helpers\Helper;
+use app\Helpers\MenuHelper;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\HttpFoundation\Session\Session;
-
+use app\Services\RequestUriServiceProvider;
+use app\Services\RedirectServiceProvider;
+use Studio\Models\Visitor;
 
 class Bootstrap
 {
@@ -30,7 +33,6 @@ class Bootstrap
      * @var MyApplication
      */
     protected $my_app;
-    protected $session;
 
     /**
      * Constructor
@@ -40,6 +42,7 @@ class Bootstrap
     {
         $this->my_app = $my_app;
 
+        if (!defined('PATH_ROOT'))
         define( 'PATH_ROOT', realpath(__DIR__ . "/..") );
 
         // init config
@@ -50,8 +53,19 @@ class Bootstrap
 
         $this->_iniProviders($my_app);
 
-        $helper = new Helper($my_app, $this->session );
+        $helper = $this->my_app['helper'];
+        $menuHelper = $this->my_app['menuhelper'];
         $helper->setContext();
+        $menuHelper->setMenuContext();
+        $url_generator = $this->my_app['url_generator'];
+        $db = $this->my_app['db'];
+        $blade = $this->my_app['blade'];
+        $mailer = $this->my_app['mailer'];
+        $session = $this->my_app['session'];
+        $validator = $this->my_app['validator'];
+        $visitor = $this->my_app['visitor'];
+        $config_parameters = $this->my_app['config']['parameters'];
+        $redirect = $this->my_app['redirect'];
 
         // load routes
         require PATH_ROOT . '/app/routes.php';
@@ -65,7 +79,7 @@ class Bootstrap
             $pattern_flag = "/^\/nl|en\/flag/";
             if (preg_match($pattern_favicon, $uri) === 0 &&
                 preg_match($pattern_flag, $uri) === 0) {
-                $this->session->set('previous_route', $uri);
+                $my_app['session']->set('previous_route', $uri);
             }
         }
     }
@@ -92,6 +106,7 @@ class Bootstrap
             foreach ($data['parameters'] as $key => $value) {
                 $params['parameters'][$key] = $this->_formatIniValue($value);
             }
+            if (!defined('APP_ENV'))
             define( 'APP_ENV', $params['parameters']['environment']);
             $fileConfig =
                 APP_ENV === 'prod'?
@@ -168,6 +183,7 @@ class Bootstrap
         $bTest = APP_ENV === 'test'? true : false;
 
         if (!$bTest) {
+            // set $this->my_app['session']
             $my_app->register(
                 new SessionServiceProvider(),
                 array(
@@ -180,14 +196,53 @@ class Bootstrap
                     $my_app['request'] = $request;
                 }
             );
-            $this->session = $this->my_app['session'];
         } else {
-            $this->session = new Session(new MockArraySessionStorage());
+            $this->my_app['session'] = new Session(new MockArraySessionStorage());
         }
     }
 
     private function _iniProviders(MyApplication $my_app) {
-        // initialize providers
+        // initialize services
+
+        $my_app->register(new RequestUriServiceProvider());
+        $my_app->register(new RedirectServiceProvider($my_app));
+
+        // locale
+        $my_app->register(new LocaleServiceProvider());
+
+        // translation
+        $my_app->register(new TranslationServiceProvider());
+        $trans = $my_app['translator'];
+        $trans->setFallbackLocales(array('nl'));
+        $trans->addLoader('yaml', new YamlFileLoader());
+
+        // $my_app['db'] service
+        $config_prms = $my_app['config']['parameters'];
+        $my_app->register(new DoctrineServiceProvider(),
+            array('dbs.options'=>[
+                'default'=>[
+                    'driver'   => $config_prms['db.driver'],
+                    'host'     => $config_prms['db.host'],
+                    'dbname'   => $config_prms['db.dbname'],
+                    'user'     => $config_prms['db.user'],
+                    'password' => $config_prms['db.password'],
+                    'charset'  => $config_prms['db.charset']
+                ]
+            ]
+            )
+        );
+
+        $my_app['helper'] = function ($my_app) {
+            return new Helper($my_app['translator'], $my_app['requesturi'], $my_app['session'], $my_app['db']);
+        };
+
+        $my_app['menuhelper'] = function ($my_app) {
+            return new MenuHelper($my_app['helper'], $my_app['requesturi'], $my_app['url_generator']);
+        };
+
+        $my_app['visitor'] = function ($my_app) {
+            return new Visitor($my_app['helper'], $my_app['validator'], $my_app['blade']);
+        };
 
         // PimpleDump
         if (APP_ENV !== 'prod')
@@ -201,13 +256,12 @@ class Bootstrap
 //        ));
 
         // blade templates
-        $path = PATH_ROOT  . '/web/resources/Views';
+        $path = PATH_ROOT . '/web/resources/Views';
         $my_app->register(new BladeServiceProvider(), array(
             'blade.view_path' => $path,
             'blade.cache_path' => PATH_ROOT . '/cache'
         ));
 
-        $config_prms = $my_app['config']['parameters'];
         $my_app->register(new SwiftmailerServiceProvider());
         $my_app['swiftmailer.options'] = array(
             'host' =>       $config_prms['mail.host'], //'smtp.vevida.com',
@@ -216,21 +270,6 @@ class Bootstrap
             'password' =>   $config_prms['mail.password'],
             'encryption' => $config_prms['mail.encryption'], // 'tls'
             'auth_mode' =>  $config_prms['mail.auth_mode'] // 'login'
-        );
-
-        // doctrine
-        $my_app->register(new DoctrineServiceProvider(),
-            array('dbs.options'=>[
-                  'default'=>[
-                      'driver'   => $config_prms['db.driver'],
-                      'host'     => $config_prms['db.host'],
-                      'dbname'   => $config_prms['db.dbname'],
-                      'user'     => $config_prms['db.user'],
-                      'password' => $config_prms['db.password'],
-                      'charset'  => $config_prms['db.charset']
-                  ]
-            ]
-        )
         );
 
         // asset service
@@ -243,14 +282,8 @@ class Bootstrap
             )
         );
 
-        // locale
-        $my_app->register(new LocaleServiceProvider());
+        // @@@ weg $my_app->register(new Visitor($my_app['helper'], $my_app['validator'], $my_app['blade']));
 
-        // translation
-        $my_app->register(new TranslationServiceProvider());
-        $trans = $my_app['translator'];
-        $trans->setFallbackLocales(array('nl'));
-        $trans->addLoader('yaml', new YamlFileLoader());
         $my_app->register(new ServiceControllerServiceProvider());
     }
 }

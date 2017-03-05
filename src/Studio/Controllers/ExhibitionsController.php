@@ -2,12 +2,22 @@
 
 namespace Studio\Controllers;
 
+use app\Helpers\Helper;
 use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class ExhibitionsController extends BaseController implements ControllerProviderInterface{
+    protected $blade;
+
+    public function __construct(Helper $helper, MenuHelper $menuHelper, BladeProxy $blade){
+        parent::__construct($helper, $menuHelper);
+
+        $this->blade = $blade;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -21,10 +31,10 @@ class ExhibitionsController extends BaseController implements ControllerProvider
 
     public function getResponse(Request $request):string{
         // set tabmenu_items
-        $main_menu = $this->context['active_menu']; // exhibitions
+        $main_menu = $this->menu_context['active_menu']; // exhibitions
         $active_tabmenu = $request->get('tab_menu');
         $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
-        $this->context['tabmenu_items'] = $tabmenu_items;
+        $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // get header
         $key1 = "exhibitions." . $active_tabmenu;
@@ -38,10 +48,10 @@ class ExhibitionsController extends BaseController implements ControllerProvider
         $values['table_header'] = $header;
         $values['table_field_names'] = $field_names;
         $values['table_rows'] = $rows;
-        $data = array('context' => $this->context, 'values'=> $values);
+        $data = array('context' => $this->context, 'menu_context' => $this->menu_context, 'values'=> $values);
 
         // return view
-        $view = $this->app['blade']->view('layouts.tabular', $data);
+        $view = $this->blade->view('layouts.tabular', $data);
         return $view;
     }
 }

@@ -1,13 +1,15 @@
 <?php
 
-namespace Studio\Controllers\Helpers;
+namespace Studio\Models;
 
-use app\MyApplication;
+use Aea\Model\BladeProxy;
+use Pimple\ServiceProviderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Validator\RecursiveValidator;
+use app\Helpers\Helper;
 
-class Visitor
-{
-    protected $app;
+class Visitor implements ServiceProviderInterface{
+
     protected $context;
 
     /**
@@ -44,10 +46,20 @@ class Visitor
      */
     public $bezEmail;
 
-    public function __construct(MyApplication $app, array $context){
-        $this->app = $app;
-        $this->context = $context;
-        $this->setVisitor($_POST);
+    protected $helper;
+    protected $validator;
+    protected $blade;
+
+    public function __construct(Helper $helper, RecursiveValidator $validator, BladeProxy $blade){
+        $this->validator = $validator;
+        $this->blade = $blade;
+        $this->helper = $helper;
+    }
+
+    public function register(\Pimple\Container $app){
+        $app['visitor'] = function () {
+            return $this;
+        };
     }
 
     private function setVisitor(array $prms):Visitor{
@@ -77,8 +89,8 @@ class Visitor
     }
 
     public function validate():string{
-        $errors = $this->app['validator']->validate($this);
-        $errmsg = null;
+        $errors = $this->validator->validate($this);
+        $errmsg = '';
         if (count($errors) > 0) {
             foreach ($errors as $error) {
                 $errmsg .= $error->getPropertyPath().' '.$error->getMessage()."\n";
@@ -90,35 +102,36 @@ class Visitor
     function visitor_visit_confirmed_html(){
         $viewname = 'pages.visitor_visit_confirmed_html';
         $data = array('visitor' => $this);
-        $view = $this->app['blade']->view($viewname, $data);
+        $view = $this->blade->view($viewname, $data);
         return $view;
     }
 
     function visitor_visit_confirmed_thanks_html(){
         $viewname = 'pages.visitor_visit_confirmed_thanks_html';
-        $data = array('context' => $this->context, 'visitor' => $this);
-        $view = $this->app['blade']->view($viewname, $data);
+        $context = $this->helper->getContext();
+        $data = array('context' => $context, 'visitor' => $this);
+        $view = $this->blade->view($viewname, $data);
         return $view;
     }
 
     function visitor_visit_confirmed_plain(){
         $viewname = 'pages.visitor_visit_confirmed_plain';
         $data = array('visitor' => $this);
-        $view = $this->app['blade']->view($viewname, $data);
+        $view = $this->blade->view($viewname, $data);
         return $view;
     }
 
     function artist_visit_confirmed_html(){
         $viewname = 'pages.artist_visit_confirmed_html';
         $data = array('visitor' => $this);
-        $view = $this->app['blade']->view($viewname, $data);
+        $view = $this->blade->view($viewname, $data);
         return $view;
     }
 
     function artist_visit_confirmed_plain(){
         $viewname = 'pages.artist_visit_confirmed_plain';
         $data = array('visitor' => $this);
-        $view = $this->app['blade']->view($viewname, $data);
+        $view = $this->blade->view($viewname, $data);
         return $view;
     }
 }

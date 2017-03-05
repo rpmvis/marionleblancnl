@@ -1,12 +1,20 @@
 <?php
 
 namespace Studio\Controllers;
+
+use Aea\Model\BladeProxy;
 use app\Helpers\RegExHelper;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Api\ControllerProviderInterface;
 
-class RegExController extends BaseController implements ControllerProviderInterface{
+class RegExController implements ControllerProviderInterface{
+    protected $blade;
+
+    public function __construct(BladeProxy $blade){
+        $this->blade = $blade;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -35,7 +43,7 @@ class RegExController extends BaseController implements ControllerProviderInterf
         $values = array(
             'test_string' =>$test_string, 'pattern'=>$pattern,
             'matches'=>$matches, 'matches_count'=>$matches_count, 'groups'=>$groups);
-        $view = $this->app['blade']->view('helpers.regex', $values);
+        $view = $this->blade->view('helpers.regex', $values);
         return $view;
     }
 
@@ -59,7 +67,7 @@ class RegExController extends BaseController implements ControllerProviderInterf
         $values = array(
             'test_string' =>$test_string, 'pattern'=>$pattern,
             'matches'=>$matches2, 'matches_count'=>$matches_count, 'groups'=>$groups);
-        $view = $this->app['blade']->view('helpers.regex', $values);
+        $view = $this->blade->view('helpers.regex', $values);
         return $view;
     }
 }

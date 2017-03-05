@@ -2,20 +2,16 @@
 // src/Studio/Controller/WorkController.php
 namespace Studio\Controllers;
 
-use app\MyApplication;
 use app\Helpers\Helper;
+use app\Helpers\MenuHelper;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
-use Silex;
-use Symfony\Component\HttpFoundation\Request;
-
 
 class DemoController extends BaseController implements ControllerProviderInterface{
-    protected $request;
 
-    public function __construct(Helper $helper){
-        parent::__construct($helper);
-    }
+//    public function __construct(Helper $helper, MenuHelper $menuHelper){
+//        parent::__construct($helper, $menuHelper);
+//    }
 
     public function connect(Application $app)
     {

@@ -1,22 +1,37 @@
 <?php
 
 namespace app\Helpers;
-use app\MyApplication;
 
-class Helper
+use Pimple\ServiceProviderInterface;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\HttpFoundation\Session\Session;
+use app\Services\RequestUriServiceProvider;
+// useable? use Symfony\Component\HttpFoundation\Tests\Session\SessionTest;
+use Doctrine\DBAL\Connection;
+
+class Helper implements ServiceProviderInterface
 {
-    protected $my_app;
+    protected $translator;
+    protected $uri;
+    protected $session;
+    protected $db;
     protected $context;
     protected $locale;
-    protected $session;
     protected $baseUrl;
-    protected $menuHelper;
 
-    public function __construct(MyApplication $my_app, $session)
+    public function register(\Pimple\Container $app)
     {
-        $this->my_app = $my_app;
+        $app['helper'] = function () {
+            return $this;
+        };
+    }
+
+    public function __construct(Translator $translator, RequestUriServiceProvider $uri, Session $session, Connection $db)
+    {
+        $this->translator = $translator;
+        $this->uri = $uri;
+        $this->db = $db;
         $this->session = $session;
-        $this->menuHelper = new MenuHelper($this);
 
         // set $baseUrl
         $bTest = APP_ENV === 'test' ? true : false;
@@ -41,7 +56,7 @@ class Helper
 
     function trans($trans_id): string
     {
-        return $this->my_app['translator']->trans($trans_id);
+        return $this->translator->trans($trans_id);
     }
 
     function transValue($key1, $key2): string
@@ -51,14 +66,12 @@ class Helper
         // $key1 and $key2 filter the row with translated value
         // $key2 is pivoted and delivers the key for $row[$key2]
 
-        $db = $this->my_app['db'];
-
         $trans_field = ($this->locale === 'nl') ? 'trans_nl' : 'trans_en';
 
         $sql = "SELECT $trans_field AS `$key2`
                 FROM ttranslate2
                 WHERE key1 =  '$key1' and key2='$key2'";
-        $row = $db->fetchAssoc($sql);
+        $row = $this->db->fetchAssoc($sql);
 
         return $row[$key2];
     }
@@ -98,8 +111,7 @@ class Helper
         GROUP BY row_nr
         ORDER BY row_nr $row_order";
 
-        $db = $this->my_app['db'];
-        $rows = $db->fetchAll($sql);
+        $rows = $this->db->fetchAll($sql);
 
         // remove new lines "\n"
         for ($i = 0; $i < count($rows); $i++) {
@@ -128,34 +140,32 @@ class Helper
         return $this->baseUrl.$file;
     }
 
-    function getLanguage(): string
-    {
+    function getLanguage(): string{
         // get current language ('nl' or 'en') from session
         return $this->session->get('current_language');
     }
 
     function setLanguage()
     {
+        $this->locale = null;
+
         // a) set locale ('nl' or 'en')
         // b) store locale as 'current_language' in session
         // c) store locale in translator service
         // d) load locale resource for locale
 
         // a) check if locale goes as route parameter in REQUEST_URI
-        $this->locale = null;
-        if (isset($_SERVER['REQUEST_URI'])) {
-            $uri = $_SERVER['REQUEST_URI'];
-            if ($uri !== null) {
-                $uri = ltrim($uri, '/');
-                $array = explode("/", $uri);
-                switch ($array[0]) {
-                    case 'nl':
-                        $this->locale = $array[0];
-                        break;
-                    case 'en':
-                        $this->locale = $array[0];
-                        break;
-                }
+        $uri = $this->uri->uri();
+        if ($uri !== null) {
+            $uri= ltrim($uri, '/');
+            $array = explode("/", $uri);
+            switch ($array[0]) {
+                case 'nl':
+                    $this->locale = $array[0];
+                    break;
+                case 'en':
+                    $this->locale = $array[0];
+                    break;
             }
         }
 
@@ -167,7 +177,7 @@ class Helper
 
             // resort to first fall back locale
             if ($this->locale === null) {
-                $this->locale = $this->my_app['translator']->getFallbackLocales()[0]; // "nl"
+                $this->locale = $this->translator->getFallbackLocales()[0]; // "nl"
             }
         }
 
@@ -179,13 +189,13 @@ class Helper
         $this->session->set('current_language', $this->locale);
 
         // c) store $this->locale in translator service
-        $this->my_app['translator']->setLocale($this->locale);
+        $this->translator->setLocale($this->locale);
 
         // d) load locale resource only for actual locale
         $resources = glob(PATH_ROOT.'/app/Translator/Locales/'.$this->locale.'*.yml');
         if ($resources) {
             foreach ($resources as $resource) {
-                $this->my_app['translator']->addResource('yaml', $resource, $this->locale);
+                $this->translator->addResource('yaml', $resource, $this->locale);
             }
         } else {
             throw new \Exception("setLanguage: no translation file found!");
@@ -194,22 +204,8 @@ class Helper
 
     function setContext()
     {
-        // set array of context items
-        if (isset($_SERVER['REQUEST_URI'])) {
-            $uri = $_SERVER['REQUEST_URI'];
-            $arr = explode("/", substr($uri, 1));
-            $active_menu = $arr[0];
-        } else {
-            $active_menu = '';
-        }
-        if (empty($active_menu)) {
-            $active_menu = 'welcome';
-        } elseif ($active_menu === 'gall') {
-            $active_menu .= "/$arr[1]"; // gall/galleries1 or gall/galleries2
-        }
-        $this->context['active_menu'] = $active_menu;
-
-        // set language + locale
+        // set context items array
+        //   language + locale
         $this->setLanguage();
         $this->context['locale'] = $this->locale;
 
@@ -217,18 +213,13 @@ class Helper
         $this->context['img_src_NL_flag'] = $url.'/web/resources/appImages/netherlands_flag.bmp';
         $this->context['img_src_UK_flag'] = $url.'/web/resources/appImages/united_kingdom_flag.bmp';
 
-        // set top menu items
-        $menuHelper = new MenuHelper($this);
-        $menu_items = $menuHelper->getTopMenuItems($this->context);
-        $this->context['menu_items'] = $menu_items;
-
-        // site header: "Marion Le Blanc beeldend kunstenaar"
+        //   site header: "Marion Le Blanc beeldend kunstenaar"
         $site_header = $this->transValue('header', 'header');
         $site_header_responsive = $this->transValue('header', 'header_responsive');
         $this->context['site_header'] = $site_header;
         $this->context['site_header_responsive'] = $site_header_responsive;
 
-        // put some url's in context
+        //   some url's
         $this->context['url_CSS'] = $url.'/web/resources/CSS/styles.css';
         $this->context['img_blueDot'] = $url.'/web/resources/appImages/BlueDot.gif';
         $this->context['img_logo'] = $url.'/web/resources/appImages/LogoLichtBlauw_transp.gif';
@@ -236,17 +227,9 @@ class Helper
 
     function getContext(): array
     {
-        // get array of context items
+        // get context items array
         // to be used in controllers and views
         return $this->context;
-    }
-
-    function my_app(){
-        return $this->my_app;
-    }
-
-    function menuHelper() : MenuHelper{
-        return $this->menuHelper;
     }
 }
 

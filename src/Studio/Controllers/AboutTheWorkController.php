@@ -2,12 +2,21 @@
 
 namespace Studio\Controllers;
 
+use app\Helpers\Helper;
 use app\Helpers\MenuHelper;
+use Aea\Model\BladeProxy;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class AboutTheWorkController extends BaseController implements ControllerProviderInterface{
+    protected $blade;
+
+    public function __construct(Helper $helper, MenuHelper $menuHelper, BladeProxy $blade){
+        parent::__construct($helper, $menuHelper);
+        $this->blade = $blade;
+    }
+
     public function connect(Application $app)
 
     {
@@ -24,10 +33,10 @@ class AboutTheWorkController extends BaseController implements ControllerProvide
         // a) set context
         // - context tabmenu_items
         //   $active_tabmenu: 'about_the_work','geometry','publications', 'literature'
-        $main_menu = $this->context['active_menu'];
+        $main_menu = $this->menu_context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
         $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
-        $this->context['tabmenu_items'] = $tabmenu_items;
+        $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // - context form_type
         $key1 = "about_the_work." . $active_tabmenu;
@@ -62,10 +71,10 @@ class AboutTheWorkController extends BaseController implements ControllerProvide
         $values['table_header'] = $header;
         $values['table_field_names'] = $field_names;
         $values['table_rows'] = $rows;
-        $view_data = array('context' => $this->context, 'values'=> $values);
+        $view_data = array('context' => $this->context, 'menu_context' => $this->menu_context, 'values'=> $values);
 
         // d) return view
-        $view = $this->app['blade']->view('layouts.tabular', $view_data);
+        $view = $this->blade->view('layouts.tabular', $view_data);
         return $view;
     }
 }

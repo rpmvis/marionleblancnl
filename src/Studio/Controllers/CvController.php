@@ -2,12 +2,25 @@
 
 namespace Studio\Controllers;
 
+use app\Helpers\Helper;
 use app\Helpers\MenuHelper;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+use Aea\Model\BladeProxy;
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class CvController extends BaseController implements ControllerProviderInterface{
+    protected $urlGenerator;
+    protected $blade;
+
+    public function __construct(Helper $helper, MenuHelper $menuHelper, UrlGenerator $urlGenerator, BladeProxy $blade){
+        parent::__construct($helper, $menuHelper);
+
+        $this->urlGenerator = $urlGenerator;
+        $this->blade = $blade;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -22,10 +35,10 @@ class CvController extends BaseController implements ControllerProviderInterface
 
     public function getResponse(Request $request):string{
         // set tabmenu_items
-        $main_menu = $this->context['active_menu'];
+        $main_menu = $this->menu_context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
         $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
-        $this->context['tabmenu_items'] = $tabmenu_items;
+        $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // set view data
         $key1 = "cv";
@@ -39,8 +52,8 @@ class CvController extends BaseController implements ControllerProviderInterface
 
         // replace %BlueDot% + %img_Portret%
         $find = array('%BlueDot%', '%img_Portret%');
-        $replace = array($this->app->url('/').'web/resources/appImages/BlueDot.gif'
-                        ,$this->app->url('/').'web/resources/appImages/Portret.jpg');
+        $replace = array($this->urlGenerator->generate('/').'web/resources/appImages/BlueDot.gif'
+                        ,$this->urlGenerator->generate('/').'web/resources/appImages/Portret.jpg');
 
         for ($i=0; $i < count($find) ; $i++) {
             for ($j = 0; $j < count($rows); $j++) {
@@ -55,10 +68,10 @@ class CvController extends BaseController implements ControllerProviderInterface
         $values['table_header'] = $header;
         $values['table_field_names'] = $field_names;
         $values['table_rows'] = $rows;
-        $data = array('context' => $this->context, 'values'=> $values);
+        $data = array('context' => $this->context, 'menu_context' => $this->menu_context, 'values'=> $values);
 
         // return view
-        $view = $this->app['blade']->view('layouts.tabular', $data);
+        $view = $this->blade->view('layouts.tabular', $data);
         return $view;
     }
 }

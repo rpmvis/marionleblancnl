@@ -1,12 +1,13 @@
 <?php
 
-namespace StudioTests\Controllers;
+namespace Studio\Tests\Controllers;
 
 use Silex\WebTestCase;
 use app\MyApplication;
 
 class WebTestCase_base extends WebTestCase
 {
+
     public function createApplication()
     {
         $app = new MyApplication();
