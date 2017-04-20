@@ -24,9 +24,12 @@ class CvController extends BaseController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
-        $controllers->get('{tab_menu}', function (Request $request) {
+        $route = "/{language}/cv/{tab_menu}";
+        $controllers->get($route, function (Request $request) {
             return $this->getResponse($request);}
         )
+            ->assert('language', 'nl|en')
+            ->value('language', 'nl')
             ->value('tab_menu', 'cv')
             ->assert('tab_menu', '/^cv$/')
             ->bind('page.cv');
@@ -34,10 +37,12 @@ class CvController extends BaseController implements ControllerProviderInterface
     }
 
     public function getResponse(Request $request):string{
+        $this->setContext();
+
         // set tabmenu_items
         $main_menu = $this->menu_context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
-        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu);
         $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // set view data

@@ -1,0 +1,35 @@
+# development parameters
+parameters:
+    log_level:  DEBUG
+    #--- TimeZone: UTC, Europe/Kiev...
+    timezone: UTC
+
+    locale: nl
+
+    # debug: true, false ---
+    debug: true
+
+    # host url for local testing ---
+    url_test: 'http://localhost:8888'
+
+    # test database parameters for functional tests (test_marionleblancnl is a test database)
+    db.driver:   'pdo_mysql'
+    db.host:     'localhost'
+    db.dbname:   'test_marionleblancnl'
+    db.user:     'root'
+    db.password: 'guppie'
+    db.charset:  'utf8'
+    db.port:     '3306'
+
+    # developer mail ---
+    developer_mail: 'dev@mail.com'
+
+    # test email parameters for functional tests (pp@goldenrule.nl is a test email)
+    mail.host: 'smtp.vevida.com'
+    mail.port: 25
+    mail.username: 'pp@goldenrule.nl'
+    mail.noreply: 'noreply@goldenrule.nl'
+    mail.password: 'PPbeheer22!' # to do: encryption
+    mail.encryption: 'tls' # ('tls', 'ssl', or null)
+    mail.auth_mode: 'login' # ('plain', 'login', 'cram-md5', or null)
+    mail.disable_delivery:  true

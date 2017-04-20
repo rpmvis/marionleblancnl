@@ -13,26 +13,30 @@
 >
     <testsuites>
         <testsuite name="Studio Test Suite">
-            <directory>./../../src/Studio/Tests/</directory>
+            <directory>./../../tests/src/StudioTest/Controllers</directory>
         </testsuite>
         <!--<testsuite name="Studio Test Suite">-->
             <!--<directory>./../../vendor/silex/silex/tests/Silex/Tests/</directory>-->
         <!--</testsuite>-->
-
-        /home/rene/Silex/studio//Application/SwiftmailerApplication.php
         <!--<testsuite name="Application Test Suite">-->
             <!--<directory>./../../src/phpUnitTutorial/Tests/</directory>-->
         <!--</testsuite>-->
     </testsuites>
 
-    <!--<filter>-->
+    <filter>
+        <whitelist>
+            <directory>./../../src/Studio/Controllers</directory>
+                <exclude>
+            <directory></directory>
+            </exclude>
+        </whitelist>
         <!--<whitelist>-->
             <!--<directory>./../../src/phpUnitTutorial</directory>-->
             <!--<exclude>-->
                 <!--<directory></directory>-->
             <!--</exclude>-->
         <!--</whitelist>-->
-    <!--</filter>-->
+    </filter>
 
     <!--<logging>-->
         <!--<log type="coverage-html" target="./../../tests/coverage/"/>-->

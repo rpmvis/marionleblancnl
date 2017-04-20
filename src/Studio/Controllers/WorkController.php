@@ -26,28 +26,30 @@ class WorkController extends BaseController implements ControllerProviderInterfa
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
-
-        $controllers->get('/{main_menu}/{tab_menu}/{gallery_type}/{slice_nr}/{code}/{bgcolor}',
+        $route = '/{language}/work/{main_menu}/{tab_menu}/{gallery_type}/{slice_nr}/{code}/{bgcolor}';
+        $controllers->get($route,
             function (Request $request) {
                 return $this->getResponse($request);})
+        ->assert('language', 'nl|en')
+        ->value('language', 'nl')
         ->assert('main_menu', '^[a-z\d\/]*') // only a-z, 1-9 or /
         ->assert('tab_menu', '^[a-z\d\/_]*') // only a-z, 1-9 or _ or /
         ->assert('gallery_type', '^[a-z]$')   // only 1 char
         ->assert('slice_nr', '^[\d]{1}')      // only 1 digit
         ->assert('work', 'work')
         ->assert('code', "^\d{4}-[c|k|o|s|v]-\d+") // code: 1997-s-12
-        ->assert('bgcolor', '[\#A-F\d]{7}')     // only 6 hexadecimals
+        ->assert('bgcolor', '[\#%A-F\d]{7}')     // only 6 hexadecimals
         ->bind('work');
 
         return $controllers;
     }
 
     public function getResponse(Request $request):string{
-        // menu helper for tabmenu and color menu
+        $this->setContext();
 
-        // get req parameters
+        // menu helper for tabmenu and color menu
         $main_menu_item = $request->get('main_menu');
-        $galleries = str_replace('gall/', '', $main_menu_item);
+        $galleries = str_replace('gall/', '', $main_menu_item); // strip "gall/"
         $tab_menu = $request->get('tab_menu');
         $gallery_type= $request->get('gallery_type');
         $slice_nr = (int)$request->get('slice_nr');

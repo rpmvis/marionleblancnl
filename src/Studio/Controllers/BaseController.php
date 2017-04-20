@@ -15,9 +15,6 @@ class BaseController{
     public function __construct(Helper $helper, MenuHelper $menuHelper) {
         $this->helper = $helper;
         $this->menuHelper= $menuHelper;
-        $this->context = $helper->getContext();
-        $this->menu_context = $menuHelper->getMenuContext();
-        $this->locale = $this->context['locale'];
         $this->iniRoutes();
     }
 
@@ -28,6 +25,15 @@ class BaseController{
      */
     protected function iniRoutes() {
 
+    }
+
+    public function setContext(){
+        $this->helper->setContext();
+        $this->menuHelper->setMenuContext();
+
+        $this->context = $this->helper->getContext();
+        $this->menu_context = $this->menuHelper->getMenuContext();
+        $this->locale = $this->context['locale'];
     }
 }
 

@@ -17,25 +17,26 @@ class AboutTheWorkController extends BaseController implements ControllerProvide
         $this->blade = $blade;
     }
 
-    public function connect(Application $app)
-
-    {
+    public function connect(Application $app){
         $controllers = $app['controllers_factory'];
-        $controllers->get('/{tab_menu}', function (Request $request) {
+        $route = '/{language}/about_the_work/{tab_menu}';
+        $controllers->get($route, function (Request $request) {
             return $this->getResponse($request);}
-        )
+        )   ->assert('language', 'nl|en')
+            ->value('language', 'nl')
             ->value('tab_menu', 'about_the_work')
             ->bind('page.about_the_work');
         return $controllers;
     }
 
     public function getResponse(Request $request):string{
+        $this->setContext();
+
         // a) set context
-        // - context tabmenu_items
-        //   $active_tabmenu: 'about_the_work','geometry','publications', 'literature'
+        //    set tabmenu_items: 'about_the_work','geometry','publications', 'literature'
         $main_menu = $this->menu_context['active_menu'];
         $active_tabmenu = $request->get('tab_menu');
-        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu, $this->locale);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu, $active_tabmenu);
         $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // - context form_type

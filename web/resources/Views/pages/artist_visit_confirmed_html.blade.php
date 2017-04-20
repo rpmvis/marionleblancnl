@@ -1,3 +1,3 @@
 <p>Bericht verstuurd vanaf web-site m.b.t aanvraag atelierbezoek:</p>
 <br><br>
-@include('pages.visit_confirmed_html')
+@include('pages.visitor_visit_confirmed_html')

@@ -45,6 +45,7 @@ class Visitor implements ServiceProviderInterface{
      * )
      */
     public $bezEmail;
+    public $bezOpmerking;
 
     protected $helper;
     protected $validator;
@@ -62,7 +63,7 @@ class Visitor implements ServiceProviderInterface{
         };
     }
 
-    private function setVisitor(array $prms):Visitor{
+    public function setVisitor(array $prms):Visitor{
         $this->bezDatum = strip_tags($prms['bezDatum']);
 
         $this->bezAanhef = strip_tags($prms['bezAanhef']);
@@ -88,6 +89,10 @@ class Visitor implements ServiceProviderInterface{
         return $this;
     }
 
+    public function getVisitor(){
+        return $this;
+    }
+
     public function validate():string{
         $errors = $this->validator->validate($this);
         $errmsg = '';
@@ -97,41 +102,5 @@ class Visitor implements ServiceProviderInterface{
             }
         }
         return $errmsg;
-    }
-
-    function visitor_visit_confirmed_html(){
-        $viewname = 'pages.visitor_visit_confirmed_html';
-        $data = array('visitor' => $this);
-        $view = $this->blade->view($viewname, $data);
-        return $view;
-    }
-
-    function visitor_visit_confirmed_thanks_html(){
-        $viewname = 'pages.visitor_visit_confirmed_thanks_html';
-        $context = $this->helper->getContext();
-        $data = array('context' => $context, 'visitor' => $this);
-        $view = $this->blade->view($viewname, $data);
-        return $view;
-    }
-
-    function visitor_visit_confirmed_plain(){
-        $viewname = 'pages.visitor_visit_confirmed_plain';
-        $data = array('visitor' => $this);
-        $view = $this->blade->view($viewname, $data);
-        return $view;
-    }
-
-    function artist_visit_confirmed_html(){
-        $viewname = 'pages.artist_visit_confirmed_html';
-        $data = array('visitor' => $this);
-        $view = $this->blade->view($viewname, $data);
-        return $view;
-    }
-
-    function artist_visit_confirmed_plain(){
-        $viewname = 'pages.artist_visit_confirmed_plain';
-        $data = array('visitor' => $this);
-        $view = $this->blade->view($viewname, $data);
-        return $view;
     }
 }

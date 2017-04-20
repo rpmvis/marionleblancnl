@@ -15,6 +15,9 @@ class GalleryController extends BaseController implements ControllerProviderInte
     protected $url_generator;
     protected $blade;
     protected $db;
+    const ICON_HEIGHT = 120;
+    const ICON_WIDTH = 120;
+    const SLICE_SIZE = 16;
 
     public function __construct(Helper $helper, MenuHelper $menuHelper,
                                 UrlGenerator $url_generator, BladeProxy $blade, Connection $db)  {
@@ -23,9 +26,6 @@ class GalleryController extends BaseController implements ControllerProviderInte
         $this->url_generator = $url_generator;
         $this->blade = $blade;
         $this->db = $db;
-        define('ICON_HEIGHT', 120);
-        define('ICON_WIDTH', 120);
-        define('SLICE_SIZE', 16);
     }
 
     public function connect(Application $app)
@@ -33,16 +33,20 @@ class GalleryController extends BaseController implements ControllerProviderInte
         $controllers = $app['controllers_factory'];
 
         // route for call back to calling gallery
-        $controllers->get('{galleries}/{tab_menu}/{gallery_type}/{slice_nr}',
+        $route = '/{language}/gall/{galleries}/{tab_menu}/{gallery_type}/{slice_nr}';
+        $controllers->get($route,
             function (Request $request) {
                 return $this->getResponse($request);})
+        ->assert('language', 'nl|en')
+        ->value('language', 'nl')
         ->assert('galleries', 'galleries1|galleries2')
         ->assert('gallery_type', '[cegkv]')
         ->assert('slice_nr', '[\d]+')
         ->bind('galleries');
 
         // route for main menu, gallery 1
-        $controllers->get('{galleries}/{tab_menu}/{gallery_type}/{slice_nr}',
+        $route = '/{language}/gall/{galleries}/{tab_menu}/{gallery_type}/{slice_nr}';
+        $controllers->get($route,
             function (Request $request) {
                 return $this->getResponse($request);})
             ->assert('galleries', 'galleries1')
@@ -52,7 +56,8 @@ class GalleryController extends BaseController implements ControllerProviderInte
             ->bind('galleries1');
 
         // route for main menu, gallery 2
-        $controllers->get('{galleries}/{tab_menu}/{gallery_type}/{slice_nr}',
+        $route = '/{language}/gall/{galleries}/{tab_menu}/{gallery_type}/{slice_nr}';
+        $controllers->get($route,
             function (Request $request) {
                 return $this->getResponse($request);})
             ->assert('galleries', 'galleries2')
@@ -65,6 +70,8 @@ class GalleryController extends BaseController implements ControllerProviderInte
     }
 
     public function getResponse(Request $request):string{
+        $this->setContext();
+
         // get req parameters
         $galleries = $request->get('galleries');
         $tab_menu = $request->get('tab_menu');
@@ -75,7 +82,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
         $active_tabmenu = "$tab_menu/$gallery_type/".(string)$slice_nr; // e.g.: "gallery2/g/2"
 
         // calc $galerie_volgnr
-        $galerie_volgnr_from = (int)($slice_nr - 1) * SLICE_SIZE + 1;
+        $galerie_volgnr_from = (int)($slice_nr - 1) * self::SLICE_SIZE + 1;
 
         // get rows holding icon info
         $qb = $this->db->createQueryBuilder()
@@ -90,7 +97,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
                     'galerie_volgnr' => $galerie_volgnr_from
                 )
             )
-            ->setMaxResults(SLICE_SIZE)
+            ->setMaxResults(self::SLICE_SIZE)
         ;
         $res = $qb->execute();
         $rows = $res->fetchAll();
@@ -122,7 +129,7 @@ class GalleryController extends BaseController implements ControllerProviderInte
         }
 
         // get tabmenu items
-        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu_item, $active_tabmenu, $this->locale);
+        $tabmenu_items = $this->menuHelper->getTabMenuItems($main_menu_item, $active_tabmenu);
         $this->menu_context['tabmenu_items'] = $tabmenu_items;
 
         // view
@@ -156,12 +163,12 @@ class GalleryController extends BaseController implements ControllerProviderInte
         // height and width
         if ($row['ImageWidth'] > $row['ImageHeight']) {
             $temp = $row['ImageWidth'];
-            $width = ICON_WIDTH;
-            $height = (int) ($row['ImageHeight'] / $temp * ICON_HEIGHT + 0.5);
+            $width = self::ICON_WIDTH;
+            $height = (int) ($row['ImageHeight'] / $temp * self::ICON_HEIGHT + 0.5);
         } else {
             $temp = $row['ImageHeight'];
-            $height = ICON_HEIGHT;
-            $width = (int) ($row['ImageWidth'] / $temp * ICON_WIDTH + 0.5);
+            $height = self::ICON_HEIGHT;
+            $width = (int) ($row['ImageWidth'] / $temp * self::ICON_WIDTH + 0.5);
         }
 
         $oIcon->height = $height;

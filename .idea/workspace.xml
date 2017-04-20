@@ -5,39 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3144cffe-8abc-4494-81fd-f5a5a9bfaa43" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/RedirectServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/RequestUriServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Studio/Tests/Controllers/ContactControllerTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/resources/Views/welcome_test.blade.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/config/phpunit.xml" afterPath="$PROJECT_DIR$/tests/config/phpunit.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/config/phpunit.xml.dist" afterPath="$PROJECT_DIR$/tests/config/phpunit.xml.dist" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Studio/Controllers/Helpers/Visitor.php" afterPath="$PROJECT_DIR$/src/Studio/Models/Visitor.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/StudioTests/Controllers/CvControllerTest.php" afterPath="$PROJECT_DIR$/src/Studio/Tests/Controllers/CvControllerTest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/StudioTests/Controllers/WebTestCase_base.php" afterPath="$PROJECT_DIR$/src/Studio/Tests/Controllers/WebTestCase_base.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/StudioTests/Controllers/WelcomeControllerTest.php" afterPath="$PROJECT_DIR$/src/Studio/Tests/Controllers/WelcomeControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/ConvertServiceProvider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/EmailHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/EmailService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/EmailServiceDummy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/EmailServiceInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/GlobalVarsServiceProvider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/GlobalVarsServiceProviderInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Studio/Models/VisitorMock.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/app/BootstrapTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/app/config/parameters_test.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/AboutTheWorkControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/Bootstrap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/CvControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ExhibitionsControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/GalleryControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WebTestCaseBase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WelcomeControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WorkControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Models/VisitorTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/src/StudioTest/Routers/RouterTest.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Services/RequestUriServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Studio/Controllers/temp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Studio/Tests/Controllers/ContactControllerTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Studio/Tests/Controllers/CvControllerTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Studio/Tests/Controllers/WebTestCase_base.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Studio/Tests/Controllers/WelcomeControllerTest.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/rene.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/rene.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/studio.iml" afterPath="$PROJECT_DIR$/.idea/studio.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Bootstrap.php" afterPath="$PROJECT_DIR$/app/Bootstrap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/Helper.php" afterPath="$PROJECT_DIR$/app/Helpers/Helper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/MenuHelper.php" afterPath="$PROJECT_DIR$/app/Helpers/MenuHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/environment.yml" afterPath="$PROJECT_DIR$/app/config/environment.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/AboutTheWorkController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/AboutTheWorkController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/BaseController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/BaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/ContactController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/ContactController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/CvController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/CvController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/DefaultController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/DemoController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/DemoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/ExhibitionsController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/ExhibitionsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/FlagController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/FlagController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/GalleryController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/GalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/HtmlController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/HtmlController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/RegExController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/RegExController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/WelcomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Controllers/WorkController.php" afterPath="$PROJECT_DIR$/src/Studio/Controllers/WorkController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/includes/menu.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/includes/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/includes/tabmenu.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/includes/tabmenu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Studio/Models/Visitor.php" afterPath="$PROJECT_DIR$/src/Studio/Models/Visitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/config/phpunit.xml" afterPath="$PROJECT_DIR$/tests/config/phpunit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_html.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_html.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_plain.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_plain.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_html.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_html.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_plain.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_plain.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_thanks_html.blade.php" afterPath="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_thanks_html.blade.php" />
     </list>
     <ignored path="studio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,6 +72,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/studio$PHPUnit_Rene.coverage" NAME="PHPUnit Rene Coverage Results" MODIFIED="1489522962288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myAutoScrollToSource" value="true" />
+    <option name="myAutoScrollFromSource" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -65,22 +96,8 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - marionleblancnl@127.0.0.1" />
+        <option name="myItemId" value="TEST MySQL - marionleblancnl@127.0.0.1" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - marionleblancnl@127.0.0.1" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
     </PATH>
   </component>
@@ -90,106 +107,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MonologTraitTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/MonologTraitTest.php">
+      <file leaf-file-name="ContactControllerTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="746">
+              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
-                <element signature="e#259#301#0#PHP" expanded="true" />
+                <element signature="e#7#50#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phpunit.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp/phpunit.xml">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="735">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phpunit.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/config/phpunit.xml">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="23" column="16" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="29" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeControllerTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/WelcomeControllerTest.php">
+      <file leaf-file-name="Fileloader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Fileloader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="1159">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#227#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebTestCase_base.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/WebTestCase_base.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CvControllerTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/CvControllerTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactControllerTest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/ContactControllerTest.php">
+      <file leaf-file-name="VisitorMock.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Studio/Models/VisitorMock.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap797.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/797/bootstrap797.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/TokenTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <element signature="e#6#247#0#PHP" expanded="true" />
+                <element signature="e#33#51#0#PHP" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestCase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="98" column="15" lean-forward="false" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -203,74 +172,102 @@
         <option value="YML" />
         <option value="Blade template" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="XML file" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabmenu_items</find>
-      <find>$this-&gt;context['tabmenu_items']</find>
-      <find>active</find>
-      <find>helper</find>
-      <find>$locale</find>
-      <find>$main_menu_item</find>
-      <find>locale</find>
-      <find>img_src_UK_flag</find>
-      <find>$this-&gt;menu_context['menu']</find>
-      <find>$this-&gt;context['active_menu']</find>
-      <find>flag.redirect</find>
-      <find>redirect</find>
-      <find>$this-&gt;app</find>
-      <find>new RedirectUriServiceProvider</find>
-      <find>RedirectUriServiceProvider</find>
-      <find>$my_app['visitor']</find>
-      <find>RequestUriServiceProvider</find>
-      <find>my</find>
-      <find>$uri</find>
-      <find>-&gt;get</find>
-      <find>welcome</find>
-      <find>$this-&gt;uri</find>
-      <find>active_menu</find>
-      <find>Silex\Tests\Application</find>
-      <find>new RedirectServiceProvider</find>
-      <find>phpunit</find>
-      <find>PHPUnit\Framework\TestCase</find>
-      <find>class PHPUnit_Framework_TestCase</find>
-      <find>PHPUnit_Framework_TestCase</find>
-      <find>unknown main_menu_item</find>
+      <find>app\Helpers\Email</find>
+      <find>email</find>
+      <find>implements ServiceProviderInterface</find>
+      <find>implements.*ServiceProviderInterface</find>
+      <find>register</find>
+      <find>App\Validation\EmailValidator</find>
+      <find>$emailValidator</find>
+      <find>\App\Validation\EmailValidator</find>
+      <find>EmailHelper</find>
+      <find>pimple.json</find>
+      <find>pimple</find>
+      <find>new_swift_message</find>
+      <find>emailValidator</find>
+      <find>EmailServiceDummy</find>
+      <find>app['email_helper']</find>
+      <find>getVisitor</find>
+      <find>EmailServiceInterface</find>
+      <find>$visitor</find>
+      <find>EmailService</find>
+      <find>dummy</find>
+      <find>send</find>
+      <find>$this-&gt;app['visitor']</find>
+      <find>_mockVisitorRepo</find>
+      <find>visitor</find>
+      <find>$visitorRepo</find>
+      <find>Visitor</find>
+      <find>app['visitor']</find>
+      <find>VisitorRepoInterface</find>
+      <find>$result</find>
+      <find>VisitorDummy</find>
     </findStrings>
     <replaceStrings>
-      <replace>CvController</replace>
-      <replace>providerTestSluggify</replace>
-      <replace>$this-&gt;translator</replace>
-      <replace>use Aea\Model\BladeProxy;</replace>
-      <replace>BladeProxy $blade</replace>
-      <replace>$this-&gt;url_generator</replace>
-      <replace>$this-&gt;mailer</replace>
-      <replace>$this-&gt;blade</replace>
-      <replace>$this-&gt;urlGenerator-&gt;generate</replace>
-      <replace>$this-&gt;menucontext</replace>
-      <replace>$this-&gt;visitor</replace>
-      <replace>$cfg_prms</replace>
-      <replace>$this-&gt;menu_context['tabmenu_items']</replace>
-      <replace>$this-&gt;menu_context</replace>
-      <replace>$this-&gt;locale</replace>
-      <replace>$this-&gt;menu_context['active_menu']</replace>
-      <replace>$this-&gt;main_menu_item</replace>
+      <replace>$app['globalvars']</replace>
+      <replace>$my_app['globalvars']</replace>
+      <replace>WebTestCase_base</replace>
+      <replace>WebTestCaseBase</replace>
+      <replace>extends \PHPUnit\Framework\TestCase</replace>
+      <replace>$url2</replace>
+      <replace>$value</replace>
+      <replace>$route</replace>
+      <replace>Gallery</replace>
+      <replace>''</replace>
+      <replace>urlGenerator</replace>
+      <replace>$work_route</replace>
+      <replace>'</replace>
+      <replace>$visitorRepo</replace>
+      <replace>%href_atelierbezoek%</replace>
+      <replace>$app['global_vars']</replace>
+      <replace>EmailHelperDummy</replace>
+      <replace>EmailService</replace>
+      <replace>$app</replace>
+      <replace>$email_helper</replace>
+      <replace>app\Services\EmailService</replace>
+      <replace>app\Services\Email</replace>
+      <replace>$emailHelper</replace>
+      <replace>App\Services\EmailHelper</replace>
+      <replace>$this-&gt;app</replace>
+      <replace>emailHelper</replace>
+      <replace>Visitor</replace>
+      <replace>$visitor</replace>
+      <replace>$mock</replace>
+      <replace>VisitorMock</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/web/resources/Views</dir>
-      <dir>$PROJECT_DIR$/src/Studio</dir>
-      <dir>$PROJECT_DIR$/src/Studio/Controllers</dir>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/app</dir>
       <dir>$PROJECT_DIR$/vendor/composer</dir>
-      <dir>$PROJECT_DIR$/vendor/silex/silex</dir>
-      <dir>$PROJECT_DIR$/vendor</dir>
       <dir>$PROJECT_DIR$/vendor/phpunit</dir>
+      <dir>$PROJECT_DIR$/tests/src/StudioTest/Controllers</dir>
+      <dir>$PROJECT_DIR$/vendor/silex/silex/tests</dir>
+      <dir>$PROJECT_DIR$/tests_silex/Silex/Tests/Application</dir>
+      <dir>$PROJECT_DIR$/tests_silex/Silex/Tests</dir>
+      <dir>$PROJECT_DIR$/tests_silex</dir>
+      <dir>$PROJECT_DIR$/src/Studio</dir>
+      <dir>$PROJECT_DIR$/tests/src</dir>
+      <dir>$PROJECT_DIR$/vendor/mockery</dir>
+      <dir>$PROJECT_DIR$/vendor/silex</dir>
+      <dir>$PROJECT_DIR$/vendor/silex/silex</dir>
+      <dir>$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony</dir>
+      <dir>$PROJECT_DIR$/vendor</dir>
+      <dir>$PROJECT_DIR$/app/Helpers</dir>
+      <dir>$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/vendor/swiftmailer</dir>
+      <dir>$PROJECT_DIR$/vendor/symfony</dir>
+      <dir>$PROJECT_DIR$/app</dir>
+      <dir>$PROJECT_DIR$/src/Studio/Controllers</dir>
+      <dir>$PROJECT_DIR$/app/Services</dir>
+      <dir>$PROJECT_DIR$/src/Studio/Models</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -279,57 +276,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/phpunit.xml" />
-        <option value="$PROJECT_DIR$/tests/Bootstrap.php" />
-        <option value="$PROJECT_DIR$/tests/WebTestCase_MyApp.php" />
-        <option value="$PROJECT_DIR$/tests/Studio/WebTestCase_MyApp.php" />
-        <option value="$PROJECT_DIR$/tests/Studio/Controllers/WelcomeControllerTest.php" />
-        <option value="$PROJECT_DIR$/tests/Studio/Controllers/WebTestCase_base.php" />
-        <option value="$PROJECT_DIR$/tests/StudioTests/Controllers/WebTestCase_base.php" />
-        <option value="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-        <option value="$PROJECT_DIR$/tests/StudioTests/Controllers/CvControllerTest.php" />
-        <option value="$PROJECT_DIR$/tests/StudioTests/Controllers/WelcomeControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Tests/StupidTest.php" />
-        <option value="$PROJECT_DIR$/src/phpUnitTutorial/URL.php" />
-        <option value="$PROJECT_DIR$/app/config/phpunit.xml" />
-        <option value="$PROJECT_DIR$/src/phpUnitTutorial/User.php" />
-        <option value="$PROJECT_DIR$/src/phpUnitTutorial/Tests/UserTest.php" />
-        <option value="$PROJECT_DIR$/src/phpUnitTutorial/Tests/URLTest.php" />
-        <option value="$PROJECT_DIR$/vendor/silex/silex/src/Silex/WebTestCase.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Tests/Controllers/WebTestCase_base.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Tests/Controllers/WelcomeControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Tests/Controllers/CvControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/DemoController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/HtmlController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/RegExController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/Helpers/Visitor.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/BaseController.php" />
-        <option value="$PROJECT_DIR$/web/resources/Views/includes/tabmenu.blade.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/WelcomeController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Models/Visitor.php" />
-        <option value="$PROJECT_DIR$/web/resources/Views/includes/menu.blade.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/WorkController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/AboutTheWorkController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/ContactController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/CvController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/ExhibitionsController.php" />
-        <option value="$PROJECT_DIR$/src/Studio/Controllers/GalleryController.php" />
         <option value="$PROJECT_DIR$/src/Studio/Controllers/FlagController.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WorkControllerTest.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Controllers/WelcomeController.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters_dev.yml" />
+        <option value="$PROJECT_DIR$/src/Studio/Controllers/AboutTheWorkController.php" />
+        <option value="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_thanks_html.blade.php" />
+        <option value="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_html.blade.php" />
+        <option value="$PROJECT_DIR$/web/resources/Views/pages/visitor_visit_confirmed_plain.blade.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Models/VisitorTest.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Models/Interfaces/VisitorRepoInterface.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/Services/RedirectServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Bootstrap.php" />
-        <option value="$PROJECT_DIR$/app/Helpers/Helper.php" />
-        <option value="$PROJECT_DIR$/app/Helpers/MenuHelper.php" />
-        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/MathServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/config/environment.yml" />
-        <option value="$PROJECT_DIR$/src/Studio/Tests/Controllers/ContactControllerTest.php" />
-        <option value="$PROJECT_DIR$/app/Services/RequestUriServiceProvider.php" />
-        <option value="$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/RoutingServiceProviderTest.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/Helper.php" />
+        <option value="$PROJECT_DIR$/app/Services/GlobalVarsServiceProvider.php" />
+        <option value="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_plain.blade.php" />
+        <option value="$PROJECT_DIR$/web/resources/Views/pages/artist_visit_confirmed_html.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Test/WebTestCase.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/FormTraitTest.php" />
-        <option value="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/TokenTest.php" />
         <option value="$PROJECT_DIR$/tests/config/phpunit.xml" />
+        <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/CssSelector/XPath/Translator.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/tets.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/DummyEmailHelper.php" />
+        <option value="$PROJECT_DIR$/app/Services/ConvertServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/EmailHelperInterface.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/EmailHelperDummy.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/EmailHelper.php" />
+        <option value="$PROJECT_DIR$/app/Services/EmailHelperDummy.php" />
+        <option value="$PROJECT_DIR$/app/Services/EmailHelperInterface.php" />
+        <option value="$PROJECT_DIR$/app/Validation/EmailValidator.php" />
+        <option value="$PROJECT_DIR$/app/Bootstrap.php" />
+        <option value="$PROJECT_DIR$/tests/app/config/parameters_test.yml" />
+        <option value="$PROJECT_DIR$/app/Services/EmailHelper.php" />
+        <option value="$PROJECT_DIR$/app/Services/EmailServiceDummy.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/test.html" />
+        <option value="$PROJECT_DIR$/app/Services/EmailService.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Models/VisitorRepoInterface.php" />
+        <option value="$PROJECT_DIR$/tests/app/BootstrapTest.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Controllers/ContactController.php" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/src/Studio/Models/Visitor.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/testTest.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WebTestCaseBase.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Models/VisitorDummy.php" />
+        <option value="$PROJECT_DIR$/src/Studio/Models/VisitorMock.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php" />
+        <option value="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+        <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/SomeTest.php" />
       </list>
     </option>
   </component>
@@ -349,7 +346,7 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWebServerValidation" deployment_server_id="56f2baee-32c2-4e28-ae7e-dea2e11db554" path_to_validation_script="$PROJECT_DIR$/web" selected_validation_type="LOCAL" web_path_to_validation_script="s.com" />
+  <component name="PhpWebServerValidation" deployment_server_id="56f2baee-32c2-4e28-ae7e-dea2e11db554" path_to_validation_script="$PROJECT_DIR$/web" selected_validation_type="REMOTE" web_path_to_validation_script="s.com" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7">
     <include_path>
       <path value="$PROJECT_DIR$/vendor" />
@@ -368,37 +365,55 @@
             <id />
           </State>
           <State>
-            <id>Bitwise operation issuesJavaScript</id>
+            <id>AnnotationPHP</id>
           </State>
           <State>
-            <id>Control flow issuesJavaScript</id>
+            <id>Code SmellPHP</id>
           </State>
           <State>
-            <id>DOM issuesJavaScript</id>
+            <id>Code StylePHP</id>
           </State>
           <State>
-            <id>Data flow issuesJavaScript</id>
+            <id>Control FlowPHP</id>
           </State>
           <State>
-            <id>GeneralJavaScript</id>
+            <id>DocBlocksJoomla!</id>
           </State>
           <State>
             <id>GeneralPHP</id>
           </State>
           <State>
-            <id>JavaScript</id>
+            <id>Joomla!</id>
+          </State>
+          <State>
+            <id>Naming conventionsPHP</id>
           </State>
           <State>
             <id>PHP</id>
           </State>
           <State>
-            <id>Potentially confusing code constructsJavaScript</id>
+            <id>PHP Strict StandardsPHP</id>
           </State>
           <State>
-            <id>RELAX NG</id>
+            <id>PHPDocPHP</id>
+          </State>
+          <State>
+            <id>Phing</id>
+          </State>
+          <State>
+            <id>Probable bugsPHP</id>
+          </State>
+          <State>
+            <id>Replaceable assignmentsPHP</id>
+          </State>
+          <State>
+            <id>Type compatibilityPHP</id>
           </State>
           <State>
             <id>UndefinedPHP</id>
+          </State>
+          <State>
+            <id>UnusedPHP</id>
           </State>
         </expanded-state>
       </profile-state>
@@ -441,11 +456,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,18 +473,8 @@
               <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="composer" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -487,11 +488,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="tests_silex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,7 +502,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
+              <option name="myItemId" value="tests_silex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Silex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,65 +520,59 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
+              <option name="myItemId" value="tests_silex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Studio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Studio" />
+              <option name="myItemId" value="Silex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudioTest" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudioTest" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -595,7 +590,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -609,11 +604,47 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Studio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Studio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -659,7 +690,7 @@
     <property name="settings.editor.splitter.proportion" value="0.20518519" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.composer/vendor/autoload.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -667,23 +698,29 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Studio/Models" />
-      <recent name="$PROJECT_DIR$/src/Studio/Tests/Controllers" />
-      <recent name="$PROJECT_DIR$/tests/config" />
-      <recent name="$PROJECT_DIR$/src/phpUnitTutorial/Tests" />
-      <recent name="$PROJECT_DIR$/src/Studio/Tests" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/src/StudioTest/Controllers" />
+      <recent name="$PROJECT_DIR$/temp" />
+      <recent name="$PROJECT_DIR$/tests/app/config" />
+      <recent name="$PROJECT_DIR$/tests/app" />
+      <recent name="$PROJECT_DIR$/tests/src/StudioTest/Routers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Services" />
-      <recent name="$PROJECT_DIR$/tests/StudioTests/Controllers" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/web/resources/CSS" />
+      <recent name="$PROJECT_DIR$/tests/src/StudioTest/Controllers" />
+      <recent name="$PROJECT_DIR$/temp" />
+      <recent name="$PROJECT_DIR$/tests/src/StudioTest" />
+      <recent name="$PROJECT_DIR$/tests_silex/Silex/Tests" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.PHPUnit Rene">
-    <configuration default="false" name="phpunit" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://s.com/vendor/phpunit/phpunit/phpunit">
+    <configuration default="false" name="ContactControllerTest.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="testTest.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/src/StudioTest/Controllers/testTest.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="SomeTest.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/src/StudioTest/Controllers/SomeTest.php">
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -759,18 +796,32 @@
     <configuration default="false" name="Debug Config - Remote Host" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" server_name="s.com">
       <method />
     </configuration>
-    <configuration default="false" name="PHPUnit Rene" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
+    <configuration default="false" name="Tests Silex" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/tests_silex/phpunit.xml.dist" directory="$PROJECT_DIR$/tests_silex/Silex/Tests" use_alternative_configuration_file="true" />
       <method />
     </configuration>
-    <list size="3">
+    <configuration default="false" name="PHPUnit Rene" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner class="WelcomeControllerTest" directory="$PROJECT_DIR$/tests/src/StudioTest/Controllers" file="$PROJECT_DIR$/tests/src/StudioTest/Controllers/WelcomeControllerTest.php" method="testWelcomeController" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Contact Controller Test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner class="ContactControllerTest" file="$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php" scope="Class" />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="PHP Web Application.Debug Config - Remote Host" />
-      <item index="1" class="java.lang.String" itemvalue="PHPUnit.PHPUnit Rene" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.phpunit" />
+      <item index="1" class="java.lang.String" itemvalue="PHPUnit.Tests Silex" />
+      <item index="2" class="java.lang.String" itemvalue="PHPUnit.PHPUnit Rene" />
+      <item index="3" class="java.lang.String" itemvalue="PHPUnit.Contact Controller Test" />
+      <item index="4" class="java.lang.String" itemvalue="PHP Script.ContactControllerTest.php" />
+      <item index="5" class="java.lang.String" itemvalue="PHP Script.testTest.php" />
+      <item index="6" class="java.lang.String" itemvalue="PHP Script.SomeTest.php" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.phpunit" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.ContactControllerTest.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.SomeTest.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.testTest.php" />
       </list>
     </recent_temporary>
   </component>
@@ -778,7 +829,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",VISIBILITY_SORTER,ALPHA_COMPARATOR" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -856,20 +907,58 @@
       <workItem from="1488376721380" duration="584000" />
       <workItem from="1488377325133" duration="46138000" />
       <workItem from="1488545325261" duration="30977000" />
-      <workItem from="1488743151796" duration="4887000" />
+      <workItem from="1488743151796" duration="23887000" />
+      <workItem from="1488980428720" duration="6512000" />
+      <workItem from="1489079287487" duration="26035000" />
+      <workItem from="1489486802981" duration="36516000" />
+      <workItem from="1489599195218" duration="50193000" />
+      <workItem from="1489777325481" duration="81842000" />
+      <workItem from="1491917098148" duration="20590000" />
+      <workItem from="1492008382140" duration="2691000" />
+      <workItem from="1492011086933" duration="4774000" />
+      <workItem from="1492518445036" duration="34000" />
+      <workItem from="1492600795105" duration="19000" />
+      <workItem from="1492600830053" duration="855000" />
+      <workItem from="1492610226236" duration="49000" />
+      <workItem from="1492610835897" duration="653000" />
+      <workItem from="1492688252210" duration="35000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PHPUnit_Rene - 2017.03.05 at 21h 02m 02s.xml">
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 16h 27m 04s.xml">
       <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="PHPUnit_Rene - 2017.03.05 at 21h 29m 11s.xml">
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 16h 27m 13s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 17h 47m 26s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 17h 54m 01s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 18h 00m 35s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 18h 12m 04s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 18h 13m 24s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 18h 20m 56s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 19h 10m 42s.xml">
+      <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="PHPUnit_Rene - 2017.04.12 at 20h 33m 48s.xml">
       <configuration name="PHPUnit Rene" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1066967000" />
+    <option name="totallyTimeSpent" value="1316765000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,50 +973,72 @@
     <frame x="-1" y="0" width="1922" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31196582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24471635" sideWeight="0.23076923" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.027642276" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36648044" sideWeight="0.7692308" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22168803" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5173184" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22569832" sideWeight="0.08395722" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17593583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46815643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25373933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17765363" sideWeight="0.8100649" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1764706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23687151" sideWeight="0.7973262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43910614" sideWeight="0.63141024" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0357906" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24916202" sideWeight="0.7556818" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86480445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02513369" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14331551" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21899441" sideWeight="0.7556818" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14972067" sideWeight="0.9160428" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.224581" sideWeight="0.844385" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24471635" sideWeight="0.23076923" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22569832" sideWeight="0.08395722" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12067039" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793296" sideWeight="0.8100649" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28258547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0357906" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17094973" sideWeight="0.7556818" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.027642276" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1150838" sideWeight="0.7692308" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23931624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46815643" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24916202" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02513369" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2547486" sideWeight="0.7973262" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24064171" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18235295" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36871508" sideWeight="0.7556818" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17593583" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22569832" sideWeight="0.9160428" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1764706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1877095" sideWeight="0.63141024" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13519552" sideWeight="0.844385" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -974,29 +1085,9 @@
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Studio/Controllers/ContactController.php</url>
-          <line>131</line>
-          <option name="timeStamp" value="250" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Helpers/MathServiceProvider.php</url>
-          <line>12</line>
-          <option name="timeStamp" value="474" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Helpers/MathServiceProvider.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="475" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Helpers/Math.php</url>
           <line>12</line>
           <option name="timeStamp" value="482" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/AppKernel.php</url>
-          <line>8</line>
-          <option name="timeStamp" value="530" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/vendor/composer/autoload_files.php</url>
@@ -1024,14 +1115,9 @@
           <option name="timeStamp" value="551" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/temp/Bootstrap.php</url>
+          <url>file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/Bootstrap.php</url>
           <line>17</line>
           <option name="timeStamp" value="554" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/vendor/composer/ClassLoader.php</url>
-          <line>62</line>
-          <option name="timeStamp" value="573" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/vendor/composer/ClassLoader.php</url>
@@ -1049,19 +1135,9 @@
           <option name="timeStamp" value="577" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php</url>
-          <line>69</line>
-          <option name="timeStamp" value="589" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/temp/Test/WebTestCase.php</url>
           <line>15</line>
           <option name="timeStamp" value="602" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Studio/Controllers/ContactController.php</url>
-          <line>104</line>
-          <option name="timeStamp" value="612" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Studio/Controllers/RegExController.php</url>
@@ -1069,30 +1145,80 @@
           <option name="timeStamp" value="621" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Studio/Controllers/ContactController.php</url>
-          <line>78</line>
-          <option name="timeStamp" value="624" />
+          <url>file://$USER_HOME$/.composer/vendor/phpunit/phpunit/src/Util/Fileloader.php</url>
+          <line>38</line>
+          <option name="timeStamp" value="648" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$USER_HOME$/.composer/vendor/composer/ClassLoader.php</url>
+          <line>202</line>
+          <option name="timeStamp" value="651" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Bootstrap.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="661" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/composer/ClassLoader.php</url>
+          <line>421</line>
+          <option name="timeStamp" value="679" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/WebTestCaseTest.php</url>
+          <line>26</line>
+          <option name="timeStamp" value="681" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/FunctionalTest.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="682" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests_silex/Silex/Tests_source/ApplicationTest.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="684" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests_silex/Silex/Tests_source/Application/SwiftmailerTraitTest.php</url>
+          <line>24</line>
+          <option name="timeStamp" value="685" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Studio/Models/Visitor.php</url>
-          <line>110</line>
-          <option name="timeStamp" value="630" />
+          <line>4</line>
+          <option name="timeStamp" value="767" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/routes.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="642" />
+          <url>file://$PROJECT_DIR$/app/Services/GlobalVarsServiceProvider.php</url>
+          <line>9</line>
+          <option name="timeStamp" value="778" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Helpers/MenuHelper.php</url>
-          <line>221</line>
-          <option name="timeStamp" value="644" />
+          <url>file://$PROJECT_DIR$/app/Helpers/MathServiceProvider.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="817" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/app/BootstrapTest.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="849" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="865" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php</url>
+          <line>6</line>
+          <option name="timeStamp" value="874" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="645" />
+      <option name="time" value="876" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
@@ -1103,447 +1229,377 @@
         <watch expression="realpath(__DIR__ . '/../')" />
         <watch expression="$this-&gt;prefixesPsr0" />
       </configuration>
+      <configuration name="PHPUnitRunConfigurationType">
+        <watch expression="$app['visitor']" />
+      </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Studio/Controllers/FlagController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMimeEntity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#61#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="271">
+          <caret line="581" column="0" lean-forward="false" selection-start-line="581" selection-start-column="0" selection-end-line="581" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MyApplication.php">
+    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/Provider/DoctrineServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="-761">
+          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="389">
+          <caret line="362" column="0" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helpers/MathServiceProvider.php">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/32b6a865-91db-471d-96fe-3a5f2c1f3787/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="210" column="5" lean-forward="true" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3933">
-          <caret line="207" column="43" lean-forward="false" selection-start-line="207" selection-start-column="43" selection-end-line="207" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/environment.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Helpers/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-551">
-          <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="82" />
+        <state relative-caret-position="950">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ConvertServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-499">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/MathServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sorien/silex-pimple-dumper/src/PimpleDumpProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding>
-            <element signature="e#31#67#0#PHP" expanded="false" />
-            <marker date="1488577237831" expanded="true" signature="1993:2111" ph="SELECT ${$tr... ttranslate2" />
-            <marker date="1488577237831" expanded="true" signature="3460:3604" ph="SELECT ${$fi... ttranslate2" />
+            <element signature="e#35#56#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Studio/Controllers/ContactController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Debug/ErrorHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="50" column="53" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="53" />
-          <folding>
-            <element signature="e#38#84#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="7733">
+          <caret line="424" column="30" lean-forward="false" selection-start-line="424" selection-start-column="30" selection-end-line="424" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helpers/MenuHelper.php">
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/AboutTheWorkControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="231" column="19" lean-forward="false" selection-start-line="231" selection-start-column="19" selection-end-line="231" selection-end-column="19" />
-          <folding>
-            <element signature="e#31#67#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/SwiftmailerApplication.php">
+    <entry file="file://$PROJECT_DIR$/tests/app/config/parameters_test.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="641">
+          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/FormApplication.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/DomCrawler/Crawler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/SwiftmailerTraitTest.php">
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="192">
+          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestSuiteIterator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest bak.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="504" column="0" lean-forward="false" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/Application/FormTrait.php">
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="323" column="0" lean-forward="false" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/README.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/SPL_c1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="1844" column="6" lean-forward="false" selection-start-line="1844" selection-start-column="6" selection-end-line="1844" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/pimple/pimple/src/Pimple/Container.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+        <state relative-caret-position="374">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/RememberMeServiceProviderTest.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core_c.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="152">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/MonologServiceProviderTest.php">
+    <entry file="file://$PROJECT_DIR$/app/Services/EmailServiceInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3819">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="95">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/FormServiceProviderTest.php">
+    <entry file="file://$PROJECT_DIR$/app/Services/EmailService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/DoctrineServiceProviderTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/SessionServiceProviderTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1388">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/TwigServiceProviderTest.php">
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Models/VisitorTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#221#0#PHP" expanded="false" />
-            <element signature="e#256#278#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/ValidatorServiceProviderTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Studio/Controllers/CvController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#221#0#PHP" expanded="false" />
-            <element signature="e#256#278#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/TranslationServiceProviderTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Studio/Models/VisitorRepoInterface.php" />
+    <entry file="file://$PROJECT_DIR$/app/Bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1786">
-          <caret line="105" column="20" lean-forward="false" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
-          <folding>
-            <element signature="e#7#221#0#PHP" expanded="false" />
-            <element signature="e#256#278#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Provider/RoutingServiceProviderTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#221#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-703">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="247">
+          <caret line="92" column="55" lean-forward="false" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/testTest.php" />
+    <entry file="file://$PROJECT_DIR$/tests/app/BootstrapTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#29#58#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/CvControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="47" />
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/EmailHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/EmailServiceDummy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Studio/Controllers/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/HttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/RequestUriServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/BrowserKit/Client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state relative-caret-position="21">
+          <caret line="317" column="0" lean-forward="false" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/RedirectServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/WebTestCaseBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#32#68#0#PHP" expanded="false" />
+            <element signature="e#149#171#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestResult.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="857" column="0" lean-forward="false" selection-start-line="857" selection-start-column="0" selection-end-line="857" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestSuite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="721" column="0" lean-forward="false" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Studio/Models/Visitor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php">
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9538">
-          <caret line="502" column="27" lean-forward="false" selection-start-line="502" selection-start-column="27" selection-end-line="502" selection-end-column="27" />
+        <state relative-caret-position="308">
+          <caret line="908" column="25" lean-forward="false" selection-start-line="908" selection-start-column="25" selection-end-line="908" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="625" column="21" lean-forward="false" selection-start-line="625" selection-start-column="21" selection-end-line="625" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/RouterTest.php">
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/SomeTest.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Fileloader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/WebTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/ForwardCompatibility/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/FormTraitTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="1159">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
-            <element signature="e#7#221#0#PHP" expanded="true" />
+            <element signature="e#6#227#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Studio/Models/VisitorMock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#33#51#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        <state relative-caret-position="437">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="29" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/ContactControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
-            <marker date="1488747714358" expanded="true" signature="17:521" ph="{&quot;php&quot;: &quot;^7.0&quot;...}" />
-            <marker date="1488747714358" expanded="true" signature="542:627" ph="{&quot;symfony/browser-kit&quot;: &quot;^3.2&quot;...}" />
-            <marker date="1488747714358" expanded="true" signature="645:792" ph="{...}" />
-            <marker date="1488747714358" expanded="true" signature="664:786" ph="{&quot;Studio\&quot;: &quot;src/&quot;...}" />
+            <element signature="e#7#50#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-5.6.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="67">
-            <caret line="53" column="93" lean-forward="false" selection-start-line="53" selection-start-column="93" selection-end-line="53" selection-end-column="93" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Regression/GitHub/797/bootstrap797.php">
+    <entry file="file://$PROJECT_DIR$/tests/src/StudioTest/Controllers/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="98" column="15" lean-forward="false" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/TokenTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="e#6#247#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/tests/Silex/Tests/Application/MonologTraitTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="e#259#301#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/phpunit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/config/phpunit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/WelcomeControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/WebTestCase_base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/CvControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Studio/Tests/Controllers/ContactControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="735">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -13,17 +13,20 @@
         "swiftmailer/swiftmailer": "^5.4",
         "silex/silex": "^2.0",
         "phpunit/phpunit": "^6.0",
-        "monolog/monolog": "^1.22"
-    },
+        "monolog/monolog": "^1.22",
+        "silex/web-profiler": "^2.0"},
     "require-dev": {
         "symfony/browser-kit": "^3.2",
-        "symfony/css-selector": "^3.2"
+        "symfony/css-selector": "^3.2",
+        "mockery/mockery": "^0.9.9"
     },
     "autoload": {
         "psr-0": {
             "Studio\\"		  : "src/",
+            "StudioTest\\"    : "tests/src/",
             "phpUnitTutorial" : "src/",
-            "app\\"           : ""
+            "app\\"           : "",
+            "tests\\app"      : ""
         }
     },
     "autoload-dev": {

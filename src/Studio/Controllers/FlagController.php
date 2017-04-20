@@ -28,7 +28,8 @@ class FlagController extends BaseController implements ControllerProviderInterfa
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
-        $controllers->get('', function () {
+        $route = '/{language}/flag';
+        $controllers->get($route, function () {
             return $this->Redirect();}
         )
         ->assert('language', 'nl|en')
@@ -38,26 +39,30 @@ class FlagController extends BaseController implements ControllerProviderInterfa
 
     public function Redirect() : RedirectResponse{
         try{
+            $this->setContext();
+            
             $url = $this->session->get("previous_route");
 
-            if ($url !== null){
-                // e.g. $url = "/exhibitions/charity"
-                $pattern_flag = "/^\/nl|en\/flag/";
-                if (preg_match($pattern_flag, $url) !== 0)
-                    $url = $this->urlGenerator->generate('/');
-                else
-                    $url = $this->urlGenerator->generate('/');
+            // switch language at this point
+            $locale = $this->locale;
+            if (preg_match("/\/nl|en\//", $url) !== 0){
+                $url2 = "/$locale/" . substr($url, 4);
+
+                // handle exception of not translated page
+                if ($url2 == '/en/contact/studio_visit') {
+                    $url2 = '/en/contact/contact';
+                }
             } else {
-                $url = $this->urlGenerator->generate('/');
+                $url2 = "/$locale/welcome";
             }
-
         }
+
         catch (\Exception $exc){
-            // e.g. $url = "http://s.com/welcome"
-            $url = $this->urlGenerator->generate('/');
+            // e.g. $url2 = "http://s.com/welcome"
+            $url2 = '/';
         }
 
-        return  $this->redirect->redirect($url);
+        return  $this->redirect->redirect($url2);
     }
 }
 

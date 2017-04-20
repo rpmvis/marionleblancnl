@@ -5,7 +5,7 @@
 <p>Geachte {!! $visitor->bezAanhef2 !!}&nbsp;{!! $visitor->bezNaam !!}<br><br>
     Dank u voor het verzenden van uw aanvraag.<br>
     Ik neem uiterlijk binnen 2 werkdagen contact met u op om een afspraak te maken over een atelierbezoek.<br><br>
-    Hieronder vindt u nog een overzicht van de data die u naar mij verzonden hebt.<br><br>
+    Hieronder vindt u een overzicht van de data die u naar mij verzonden hebt.<br><br>
     Met vriendelijke groet,<br>Marion Le Blanc
     <br><br>
 

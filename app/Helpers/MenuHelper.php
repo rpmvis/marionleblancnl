@@ -4,7 +4,7 @@ namespace app\Helpers;
 
 use Pimple\ServiceProviderInterface;
 use Symfony\Component\Routing\Generator\UrlGenerator;
-use app\Services\RequestUriServiceProvider;
+use app\Services\GlobalVarsServiceProvider;
 
 class MenuHelper implements ServiceProviderInterface{
     // get menu for TopMenu or TabMenu or ColorMenu
@@ -25,7 +25,7 @@ class MenuHelper implements ServiceProviderInterface{
         };
     }
 
-    public function __construct(Helper $helper, RequestUriServiceProvider $uri, UrlGenerator $url_generator){
+    public function __construct(Helper $helper, GlobalVarsServiceProvider $uri, UrlGenerator $url_generator){
         $this->helper = $helper;
         $this->uri = $uri;
         $this->url_generator = $url_generator;
@@ -51,7 +51,7 @@ class MenuHelper implements ServiceProviderInterface{
 
             // set other item properties
             if ($key !== 'flag'){
-                $item->href = "/$key";
+                $locale2 = $this->locale;
             } else {
                 if ($this->locale === 'nl'){
                     $locale2 = 'en';
@@ -60,13 +60,13 @@ class MenuHelper implements ServiceProviderInterface{
                     $locale2 = 'nl';
                     $item->img_src  = $this->context['img_src_NL_flag'];
                 }
-                $item->href = "/$locale2/$key";
             }
+            $item->href = "/$locale2/$key";
             if ($key === $this->active_menu){
                 $item->active = true;
             }
             // add item to collection
-            $items[$key] = $item;
+            $items[$item->href] = $item;
         }
         return $items;
     }
@@ -119,7 +119,7 @@ class MenuHelper implements ServiceProviderInterface{
             $caption = $this->helper->trans($trans_id);
             $item = new MenuItem();
             $item->caption = $caption;
-            $item->href = "/$main_menu_item/$key";
+            $item->href = "/$this->locale/$main_menu_item/$key";
             if ($key === $active_tabmenu){
                 $item->active = true;
             }
@@ -151,6 +151,7 @@ class MenuHelper implements ServiceProviderInterface{
         // set href property, holding url that points back to the 2nd level gallery tabmenu
         $url = $this->url_generator
             ->generate('galleries', array(
+                    'language' => $this->locale,
                     'galleries' => $galleries,
                     'tab_menu' => $tab_menu,
                     'gallery_type' => $gallery_type,
@@ -219,18 +220,19 @@ class MenuHelper implements ServiceProviderInterface{
         $this->context = $this->helper->getContext();
         $this->locale = $this->context['locale'];
 
-        $url = $this->uri->uri();
+        $url = $this->uri->getRequestUri();
+        $active_menu = '';
+        $arr = [];
         if ($url !== null) {
             $arr = explode("/", substr($url, 1));
-            $active_menu = $arr[0];
-        } else {
-            $active_menu = '';
+            if (sizeof($arr) >= 2)
+                $active_menu = $arr[1];
         }
 
         if (empty($active_menu)) {
             $active_menu = 'welcome';
         } elseif ($active_menu === 'gall') {
-            $active_menu .= "/$arr[1]"; // gall/galleries1 or gall/galleries2
+            $active_menu .= "/$arr[2]"; // gall/galleries1 or gall/galleries2
         }
         $this->menu_context['active_menu'] = $active_menu;
         $this->menu_context['menu_items'] = $this->getTopMenuItems();

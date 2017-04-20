@@ -3,7 +3,7 @@ Geachte {!! $visitor->bezAanhef2 !!}&nbsp;{!! $visitor->bezNaam !!}
 Dank u voor het verzenden van uw aanvraag.
 
 Ik neem uiterlijk binnen 2 werkdagen contact met u op om een afspraak te maken over een atelierbezoek.
-Hieronder vindt u nog een overzicht van de data die u naar mij verzonden hebt.
+Hieronder vindt u een overzicht van de data die u naar mij verzonden hebt.
 
 Met vriendelijke groet,
 Marion Le Blanc

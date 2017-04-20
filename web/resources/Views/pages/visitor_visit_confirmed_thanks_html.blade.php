@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@include('includes.tabmenu')
+
 @section('content')
     <p>Dank u.</p><br>
     Een email is naar u gestuurd met de volgende inhoud:

@@ -3,4 +3,4 @@ parameters:
     # - prod (production)
     # - test
     # - dev (development) ---
-    environment: test
+    environment: dev

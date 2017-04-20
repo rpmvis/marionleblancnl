@@ -5,7 +5,7 @@ namespace app\Helpers;
 use Pimple\ServiceProviderInterface;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\HttpFoundation\Session\Session;
-use app\Services\RequestUriServiceProvider;
+use app\Services\GlobalVarsServiceProvider;
 // useable? use Symfony\Component\HttpFoundation\Tests\Session\SessionTest;
 use Doctrine\DBAL\Connection;
 
@@ -26,32 +26,14 @@ class Helper implements ServiceProviderInterface
         };
     }
 
-    public function __construct(Translator $translator, RequestUriServiceProvider $uri, Session $session, Connection $db)
+    public function __construct(Translator $translator, GlobalVarsServiceProvider $varsProv, Session $session, Connection $db)
     {
         $this->translator = $translator;
-        $this->uri = $uri;
+        $this->uri = $varsProv;
         $this->db = $db;
         $this->session = $session;
 
-        // set $baseUrl
-        $bTest = APP_ENV === 'test' ? true : false;
-
-        if (!$bTest) {
-            // set $baseUrl = site's base url
-            $url = sprintf(
-                "%s://%s",
-                isset($_SERVER['HTTPS']) &&
-                $_SERVER['HTTPS'] != 'off' ?
-                    'https' :
-                    'http',
-                $_SERVER['SERVER_NAME']
-            );
-
-            $url = rtrim($url, '/\\');
-            $this->baseUrl = $url;
-        } else {
-            $this->baseUrl = 'http://s.com';
-        }
+        $this->baseUrl = $varsProv->getBaseUrl();
     }
 
     function trans($trans_id): string
@@ -76,7 +58,7 @@ class Helper implements ServiceProviderInterface
         return $row[$key2];
     }
 
-    function transRows(string $key1, $arrayColumn_aliases, string $row_order = null): array
+    function transRows(string $key1, $arrayColumn_aliases, string $row_order = 'ASC'): array
     {
         // get array or translated rows from database table ttranslate2
         // example:
@@ -86,9 +68,6 @@ class Helper implements ServiceProviderInterface
         //   $arrayColumn_aliases: ['period', 'descr']
         //   field column_nr: only holding values 1 and 2, to be pivoted
         //   columns 'period' and 'descr' are pivoted to column names from values 1 and 2 on field column_nr
-        if ($row_order === null) {
-            $row_order = 'ASC';
-        }
         $fields = '';
         $i = 0;
 
@@ -99,12 +78,13 @@ class Helper implements ServiceProviderInterface
         // MAX( IF( column_nr =2, trans_nl, NULL ) ) AS  `descr`
         foreach ($arrayColumn_aliases as $alias) {
             $i++;
-            $fields .= "MAX( IF( column_nr=".(string)$i.", $trans_field, NULL ) ) AS  `$alias`,";
+            $column_nr = (string)$i;
+            $fields .= "MAX( IF( column_nr=$column_nr, $trans_field, NULL ) ) AS  '$alias',";
         }
         $fields = substr($fields, 0, strlen($fields) - 1);
 
         $sql =
-            "SELECT $fields
+        "SELECT $fields
         FROM ttranslate2
         WHERE key1 =  '$key1'
         AND key2 =  'row'
@@ -155,7 +135,7 @@ class Helper implements ServiceProviderInterface
         // d) load locale resource for locale
 
         // a) check if locale goes as route parameter in REQUEST_URI
-        $uri = $this->uri->uri();
+        $uri = $this->uri->getRequestUri();
         if ($uri !== null) {
             $uri= ltrim($uri, '/');
             $array = explode("/", $uri);
